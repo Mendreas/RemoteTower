@@ -1,0 +1,1985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#1a3867">
+<title>Remote &amp; Digital Towers — Knowledge Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:         #edf1f9;
+  --surface:    #ffffff;
+  --surface2:   #f4f7fc;
+  --border:     #d8e2f0;
+  --border2:    #b8cadf;
+  --navy:       #1a3867;
+  --navy-dark:  #102448;
+  --blue:       #2563eb;
+  --blue-bg:    #eff4ff;
+  --blue-bd:    #bfdbfe;
+  --green:      #0a7a56;
+  --green-bg:   #ecfdf5;
+  --green-bd:   #6ee7b7;
+  --amber:      #b45309;
+  --amber-bg:   #fffbeb;
+  --amber-bd:   #fcd34d;
+  --red:        #b91c1c;
+  --red-bg:     #fef2f2;
+  --red-bd:     #fecaca;
+  --purple:     #6d28d9;
+  --purple-bg:  #f5f3ff;
+  --purple-bd:  #c4b5fd;
+  --cyan:       #0369a1;
+  --cyan-bg:    #f0f9ff;
+  --cyan-bd:    #bae6fd;
+  --text:       #19294a;
+  --text-muted: #4d6180;
+  --text-dim:   #92a5be;
+  --fh: 'Syne', sans-serif;
+  --fm: 'Space Mono', monospace;
+  --fb: 'DM Sans', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--fb); font-size: 15px; line-height: 1.6; min-height: 100vh; }
+
+/* HEADER */
+header {
+  background: var(--navy); padding: 0 40px; height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 12px rgba(26,56,103,.3); overflow: visible;
+}
+.ht { font-family: var(--fh); font-weight: 800; font-size: 16px; letter-spacing: .03em; color: #fff; line-height: 1.5; }
+.hb { display: flex; align-items: center; gap: 13px; }
+.hi { width: 34px; height: 34px; background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.22); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 17px; }
+.ht { font-family: var(--fh); font-weight: 800; font-size: 15px; letter-spacing: .03em; color: #fff; }
+.ht span { color: #93c5fd; }
+.htag { font-family: var(--fm); font-size: 9px; color: rgba(255,255,255,.44); letter-spacing: .1em; text-transform: uppercase; margin-top: 2px; }
+.hm { font-family: var(--fm); font-size: 11px; color: rgba(255,255,255,.42); text-align: right; }
+
+/* HERO */
+.hero { background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 100%); padding: 54px 40px 46px; border-bottom: 3px solid #2563eb; }
+.eyebrow { font-family: var(--fm); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: #93c5fd; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+.eyebrow::before { content: ''; display: inline-block; width: 28px; height: 1px; background: #93c5fd; }
+.hero h1 { font-family: var(--fh); font-size: clamp(28px, 4.2vw, 50px); font-weight: 800; line-height: 1.08; letter-spacing: -.02em; max-width: 640px; margin-bottom: 15px; color: #fff; }
+.hero h1 span { color: #60a5fa; }
+.hero p { font-size: 14.5px; color: rgba(255,255,255,.6); max-width: 520px; margin-bottom: 28px; font-weight: 300; line-height: 1.7; }
+.stats { display: flex; gap: 28px; flex-wrap: wrap; }
+.stat { display: flex; flex-direction: column; gap: 2px; }
+.sv { font-family: var(--fh); font-size: 26px; font-weight: 800; color: #60a5fa; line-height: 1; }
+.sl { font-family: var(--fm); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.36); }
+
+/* NAV TABS */
+.nav-tabs { display: flex; padding: 0 40px; background: var(--surface); border-bottom: 2px solid var(--border); overflow-x: auto; scrollbar-width: none; position: sticky; top: 68px; z-index: 50; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+.nav-tabs::-webkit-scrollbar { display: none; }
+.tb { padding: 14px 19px; font-family: var(--fm); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); background: none; border: none; border-bottom: 3px solid transparent; margin-bottom: -2px; cursor: pointer; white-space: nowrap; transition: color .18s, border-color .18s; display: flex; align-items: center; gap: 7px; }
+.tb:hover { color: var(--navy); }
+.tb.active { color: var(--navy); border-bottom-color: var(--blue); font-weight: 700; }
+.tc { background: var(--border); color: var(--text-dim); font-size: 9px; padding: 2px 6px; border-radius: 10px; }
+.tb.active .tc { background: var(--blue-bg); color: var(--blue); }
+
+/* SEARCH BAR */
+.sb { padding: 13px 40px; background: var(--surface); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; }
+.sw { position: relative; flex: 1; max-width: 500px; }
+.si { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--text-dim); pointer-events: none; font-size: 14px; }
+.search-input { width: 100%; background: var(--bg); border: 1.5px solid var(--border2); border-radius: 7px; padding: 8px 12px 8px 35px; font-family: var(--fm); font-size: 12px; color: var(--text); outline: none; transition: border-color .18s; }
+.search-input::placeholder { color: var(--text-dim); }
+.search-input:focus { border-color: var(--blue); }
+.sh { font-family: var(--fm); font-size: 10px; color: var(--text-dim); background: var(--bg); border: 1px solid var(--border); padding: 3px 7px; border-radius: 4px; }
+#sri { font-family: var(--fm); font-size: 11px; color: var(--amber); margin-left: auto; }
+
+/* MAIN */
+main { padding: 30px 40px; max-width: 1400px; margin: 0 auto; }
+.sec { display: none; }
+.sec.active { display: block; }
+.sec-hd { display: flex; align-items: baseline; gap: 14px; margin-bottom: 22px; padding-bottom: 11px; border-bottom: 2px solid var(--border); }
+.sec-hd h2 { font-family: var(--fh); font-size: 20px; font-weight: 700; color: var(--navy); }
+.sec-hd small { font-family: var(--fm); font-size: 10px; color: var(--text-dim); letter-spacing: .07em; }
+
+/* CARD GRID */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 12px; }
+
+/* CARD BASE */
+.card { background: var(--surface); border: 1.5px solid var(--border); border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; gap: 9px; transition: border-color .18s, box-shadow .18s, transform .13s; }
+.card:hover { border-color: var(--blue); box-shadow: 0 4px 14px rgba(37,99,235,.1); transform: translateY(-1px); }
+a.card { text-decoration: none; color: inherit; }
+
+.ct { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.ci { width: 34px; height: 34px; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
+.ci-pdf  { background: var(--red-bg); }
+.ci-doc  { background: var(--blue-bg); }
+.ci-lnk  { background: var(--amber-bg); }
+.ci-easa { background: var(--cyan-bg); }
+.ci-vid  { background: var(--purple-bg); }
+.ci-cops { background: var(--green-bg); }
+.ci-nav  { background: var(--cyan-bg); }
+
+.bgs { display: flex; flex-wrap: wrap; gap: 4px; justify-content: flex-end; }
+.b { font-family: var(--fm); font-size: 9px; letter-spacing: .05em; text-transform: uppercase; padding: 2px 6px; border-radius: 4px; font-weight: 700; }
+.b-pdf   { background: var(--red-bg);    color: var(--red);    border: 1px solid var(--red-bd); }
+.b-doc   { background: var(--blue-bg);   color: var(--blue);   border: 1px solid var(--blue-bd); }
+.b-easa  { background: var(--cyan-bg);   color: var(--cyan);   border: 1px solid var(--cyan-bd); }
+.b-cop   { background: var(--green-bg);  color: var(--green);  border: 1px solid var(--green-bd); }
+.b-std   { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-bd); }
+.b-ind   { background: var(--amber-bg);  color: var(--amber);  border: 1px solid var(--amber-bd); }
+.b-nav   { background: var(--cyan-bg);   color: #0284c7;       border: 1px solid var(--cyan-bd); }
+.b-loc   { background: #f8fafc;          color: #64748b;       border: 1px solid var(--border2); }
+.b-vid   { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-bd); }
+.b-faa   { background: #fff7ed;          color: #c2410c;       border: 1px solid #fed7aa; }
+
+.cn { font-family: var(--fh); font-size: 13px; font-weight: 700; line-height: 1.35; color: var(--navy); }
+.cd { font-size: 12px; color: var(--text-muted); line-height: 1.55; flex: 1; }
+
+/* MULTI LINK BUTTONS */
+.cl { display: flex; flex-wrap: wrap; gap: 5px; padding-top: 9px; border-top: 1px solid var(--border); }
+.bl { display: inline-flex; align-items: center; gap: 4px; font-family: var(--fm); font-size: 10px; letter-spacing: .04em; padding: 4px 8px; border-radius: 5px; text-decoration: none; cursor: pointer; white-space: nowrap; transition: opacity .14s, transform .1s; }
+.bl:hover { opacity: .78; transform: translateY(-1px); }
+.bl-on  { background: var(--navy); color: #fff; }
+.bl-pg  { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-bd); }
+.bl-loc { background: #f1f5f9; color: #475569; border: 1px solid var(--border2); }
+.bl-vid { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-bd); }
+.bl-ext { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-bd); }
+
+/* CASE CARD */
+.cc { background: var(--surface); border: 1.5px solid var(--border); border-radius: 10px; padding: 19px 21px; display: flex; flex-direction: column; gap: 10px; transition: border-color .18s, box-shadow .18s, transform .13s; }
+.cc:hover { border-color: var(--green); box-shadow: 0 4px 14px rgba(10,122,86,.08); transform: translateY(-1px); }
+.cc-top { display: flex; align-items: center; gap: 12px; }
+.flag { font-size: 23px; line-height: 1; flex-shrink: 0; }
+.cc-name { font-family: var(--fh); font-size: 14px; font-weight: 700; color: var(--navy); }
+.cc-sub { font-family: var(--fm); font-size: 10px; color: var(--text-dim); letter-spacing: .07em; text-transform: uppercase; margin-top: 2px; }
+.cc-st { margin-left: auto; flex-shrink: 0; font-family: var(--fm); font-size: 9px; padding: 3px 8px; border-radius: 20px; letter-spacing: .05em; text-transform: uppercase; font-weight: 700; }
+.st-live { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-bd); }
+.st-op   { background: var(--blue-bg);  color: var(--blue);  border: 1px solid var(--blue-bd); }
+.st-tr   { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-bd); }
+.st-pl   { background: #f8fafc; color: #64748b; border: 1px solid var(--border2); }
+.cc-desc { font-size: 12.5px; color: var(--text-muted); line-height: 1.6; }
+.tags { display: flex; flex-wrap: wrap; gap: 5px; }
+a.tag, span.tag {
+  font-family: var(--fm); font-size: 10px;
+  padding: 3px 9px; border-radius: 4px; white-space: nowrap;
+  display: inline-flex; align-items: center; gap: 4px;
+}
+a.tag { background: var(--bg); color: var(--navy); border: 1px solid var(--border2); text-decoration: none; transition: background .13s, border-color .13s, color .13s; cursor: pointer; }
+a.tag:hover { background: var(--blue-bg); border-color: var(--blue-bd); color: var(--blue); }
+span.tag { background: var(--bg); color: var(--text-muted); border: 1px solid var(--border); }
+.cc-ft { padding-top: 9px; border-top: 1px solid var(--border); }
+.cc-lnk { font-family: var(--fm); font-size: 11px; color: var(--blue); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; font-weight: 700; transition: color .13s; }
+.cc-lnk:hover { color: var(--navy); }
+
+/* NO RESULTS */
+.nr { grid-column: 1/-1; text-align: center; padding: 52px 20px; font-family: var(--fm); color: var(--text-dim); font-size: 12px; }
+
+/* FOOTER */
+footer { padding: 16px 40px; border-top: 1px solid var(--border); background: var(--surface); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+.ft { font-family: var(--fm); font-size: 10px; color: var(--text-dim); letter-spacing: .06em; text-transform: uppercase; }
+.dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; display: inline-block; margin-right: 7px; animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+@media (max-width: 768px) { header,.nav-tabs,.sb,main,footer { padding-left: 16px; padding-right: 16px; } .hero { padding: 38px 16px 32px; } }
+
+/* NAV PORTUGAL SECTION */
+.nav-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.nav-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+@media (max-width: 900px) { .nav-grid { grid-template-columns: 1fr; } .nav-grid-3 { grid-template-columns: 1fr; } }
+.info-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: 10px; padding: 18px 20px; }
+.info-card h3 { font-family: var(--fh); font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.cwp-wrap { display: flex; flex-direction: column; gap: 8px; }
+.cwp { display: flex; align-items: center; gap: 12px; padding: 11px 14px; border-radius: 8px; border: 1.5px solid var(--border); background: var(--surface); }
+.cwp-num { width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: var(--fm); font-size: 11px; font-weight: 700; flex-shrink: 0; }
+.cwp-virtual .cwp-num { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-bd); }
+.cwp-physical .cwp-num { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-bd); }
+.cwp-virtual { border-color: var(--green-bd); background: var(--green-bg); }
+.cwp-physical { border-color: var(--blue-bd); background: var(--blue-bg); }
+.cwp-name { font-family: var(--fh); font-size: 12px; font-weight: 700; color: var(--navy); }
+.cwp-detail { font-family: var(--fb); font-size: 11px; color: var(--text-muted); margin-top: 1px; }
+.cwp-badge { margin-left: auto; font-family: var(--fm); font-size: 9px; padding: 2px 7px; border-radius: 10px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.cwp-virtual .cwp-badge { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-bd); }
+.cwp-physical .cwp-badge { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-bd); }
+.arrow-down { text-align: center; color: var(--text-dim); font-size: 18px; line-height: 1; margin: 2px 0; }
+.phase-row { display: flex; gap: 0; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }
+.phase-row::-webkit-scrollbar { height: 4px; }
+.phase-row::-webkit-scrollbar-track { background: var(--bg); }
+.phase-row::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+.phase { flex: 1; min-width: 90px; background: var(--surface); border: 1px solid var(--border); border-right: none; padding: 10px 8px; display: flex; flex-direction: column; gap: 3px; }
+.phase:first-child { border-radius: 7px 0 0 7px; }
+.phase:last-child { border-right: 1px solid var(--border); border-radius: 0 7px 7px 0; }
+.phase-n { font-family: var(--fm); font-size: 9px; color: var(--text-dim); }
+.phase-period { font-family: var(--fm); font-size: 8px; color: var(--amber); font-weight: 700; }
+.phase-title { font-family: var(--fh); font-size: 10px; font-weight: 700; color: var(--navy); line-height: 1.3; }
+.phase.ph-done { background: var(--green-bg); border-color: var(--green-bd); }
+.phase.ph-active { background: var(--amber-bg); border-color: var(--amber-bd); }
+.phase.ph-done .phase-n, .phase.ph-active .phase-n { color: var(--text-dim); }
+.kpi-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+.kpi { background: var(--bg); border: 1px solid var(--border); border-radius: 7px; padding: 10px 12px; }
+.kpi-label { font-family: var(--fm); font-size: 9px; color: var(--text-dim); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 4px; }
+.kpi-val { font-family: var(--fh); font-size: 16px; font-weight: 800; color: var(--navy); line-height: 1; }
+.kpi-sub { font-family: var(--fb); font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+.context-box { background: var(--navy); border-radius: 10px; padding: 18px 20px; color: #fff; }
+.context-box h3 { font-family: var(--fh); font-size: 13px; font-weight: 700; color: #93c5fd; margin-bottom: 10px; }
+.context-row { display: flex; gap: 10px; align-items: flex-start; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+.context-row:last-child { border-bottom: none; }
+.context-flag { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+.context-text { font-size: 11.5px; color: rgba(255,255,255,.75); line-height: 1.5; }
+.context-text b { color: #fff; }
+.highlight-box { background: var(--amber-bg); border: 1.5px solid var(--amber-bd); border-radius: 10px; padding: 14px 18px; display: flex; gap: 12px; align-items: flex-start; }
+.highlight-box .hi-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.highlight-box p { font-size: 12.5px; color: var(--text); line-height: 1.6; }
+.stakeholder-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.sh-card { background: var(--bg); border: 1px solid var(--border); border-radius: 7px; padding: 10px 12px; }
+.sh-card h4 { font-family: var(--fm); font-size: 9px; color: var(--text-dim); letter-spacing: .07em; text-transform: uppercase; margin-bottom: 6px; }
+.sh-item { font-size: 11px; color: var(--text-muted); padding: 2px 0; display: flex; gap: 6px; align-items: baseline; line-height: 1.4; }
+.sh-item::before { content: '·'; color: var(--blue); flex-shrink: 0; }
+
+/* ── COMPARATIVO ── */
+.comp-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.comp-table th { background: var(--navy); color: #fff; font-family: var(--fm); font-size: 9px; letter-spacing: .06em; text-transform: uppercase; padding: 9px 11px; text-align: left; white-space: nowrap; }
+.comp-table td { padding: 9px 11px; border-bottom: 1px solid var(--border); vertical-align: middle; color: var(--text); line-height: 1.4; }
+.comp-table tr:nth-child(even) td { background: var(--bg); }
+.comp-table tr:hover td { background: var(--blue-bg); }
+.comp-table tr.nav-row td { background: #fff8f0; border-left: 3px solid var(--amber); }
+.comp-table tr.nav-row:hover td { background: var(--amber-bg); }
+.ct-flag { font-size: 16px; }
+.ct-country { font-family: var(--fh); font-size: 12px; font-weight: 700; color: var(--navy); }
+.ct-ansp { font-family: var(--fm); font-size: 9px; color: var(--text-dim); margin-top: 1px; }
+.ct-badge { display: inline-flex; align-items: center; font-family: var(--fm); font-size: 9px; padding: 2px 7px; border-radius: 10px; font-weight: 700; white-space: nowrap; }
+.ct-live    { background: var(--green-bg); color: var(--green);  border: 1px solid var(--green-bd); }
+.ct-op      { background: var(--blue-bg);  color: var(--blue);   border: 1px solid var(--blue-bd); }
+.ct-trial   { background: var(--amber-bg); color: var(--amber);  border: 1px solid var(--amber-bd); }
+.ct-dev     { background: #f8fafc;         color: #64748b;       border: 1px solid var(--border2); }
+.ct-yes     { color: var(--green); font-weight: 700; }
+.ct-no      { color: var(--text-dim); }
+.ct-special { color: var(--amber); font-weight: 700; font-size: 10px; }
+.ct-vendor  { display: flex; flex-wrap: wrap; gap: 3px; }
+.ct-v       { background: var(--bg); border: 1px solid var(--border2); border-radius: 4px; font-family: var(--fm); font-size: 9px; color: var(--text-muted); padding: 1px 6px; }
+a.ct-v      { text-decoration: none; transition: background .13s, border-color .13s, color .13s; cursor: pointer; }
+a.ct-v:hover { background: var(--blue-bg); border-color: var(--blue-bd); color: var(--blue); }
+a.ct-country { text-decoration: none; color: var(--navy); }
+a.ct-country:hover { color: var(--blue); text-decoration: underline; }
+
+/* ── TIMELINE ── */
+.timeline { position: relative; padding: 8px 0 8px 0; }
+.timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: var(--border); transform: translateX(-50%); }
+.tl-item { display: flex; align-items: flex-start; gap: 0; margin-bottom: 10px; position: relative; }
+.tl-item.tl-left { flex-direction: row-reverse; }
+.tl-content { width: calc(50% - 28px); background: var(--surface); border: 1.5px solid var(--border); border-radius: 9px; padding: 12px 15px; transition: border-color .15s, box-shadow .15s; }
+.tl-content:hover { border-color: var(--blue); box-shadow: 0 3px 10px rgba(37,99,235,.09); }
+.tl-item.nav-item .tl-content { border-color: var(--amber-bd); background: var(--amber-bg); }
+.tl-dot { width: 56px; flex-shrink: 0; display: flex; justify-content: center; align-items: flex-start; padding-top: 12px; position: relative; z-index: 1; }
+.tl-dot-inner { width: 14px; height: 14px; border-radius: 50%; border: 2.5px solid var(--surface); box-shadow: 0 0 0 2px var(--border); }
+.tl-dot-live  { background: var(--green); box-shadow: 0 0 0 2px var(--green-bd); }
+.tl-dot-op    { background: var(--blue);  box-shadow: 0 0 0 2px var(--blue-bd); }
+.tl-dot-trial { background: var(--amber); box-shadow: 0 0 0 2px var(--amber-bd); }
+.tl-dot-dev   { background: var(--text-dim); box-shadow: 0 0 0 2px var(--border2); }
+.tl-dot-nav   { background: var(--amber); box-shadow: 0 0 0 2px var(--amber-bd); animation: pulse 2s infinite; }
+.tl-year { font-family: var(--fh); font-size: 18px; font-weight: 800; color: var(--blue); line-height: 1; margin-bottom: 2px; }
+.tl-title { font-family: var(--fh); font-size: 12px; font-weight: 700; color: var(--navy); line-height: 1.3; margin-bottom: 3px; }
+.tl-flag { font-size: 14px; margin-right: 4px; }
+.tl-desc { font-size: 11px; color: var(--text-muted); line-height: 1.5; }
+.tl-tags { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 6px; }
+.tl-tag { font-family: var(--fm); font-size: 9px; padding: 1px 6px; border-radius: 3px; background: var(--bg); color: var(--text-dim); border: 1px solid var(--border); }
+.tl-tag-green { background: var(--green-bg); color: var(--green); border-color: var(--green-bd); }
+.tl-tag-blue  { background: var(--blue-bg);  color: var(--blue);  border-color: var(--blue-bd); }
+.tl-tag-amber { background: var(--amber-bg); color: var(--amber); border-color: var(--amber-bd); }
+.tl-docs { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 7px; padding-top: 7px; border-top: 1px dashed var(--border); }
+.tl-doc-link { font-family: var(--fm); font-size: 9px; padding: 2px 7px; border-radius: 4px; text-decoration: none; display: inline-flex; align-items: center; gap: 3px; white-space: nowrap; transition: opacity .13s; }
+.tl-doc-link:hover { opacity: .75; }
+.tl-doc-pdf  { background: var(--red-bg);    color: var(--red);    border: 1px solid var(--red-bd); }
+.tl-doc-page { background: var(--blue-bg);   color: var(--blue);   border: 1px solid var(--blue-bd); }
+.tl-doc-loc  { background: #f1f5f9;          color: #475569;       border: 1px solid var(--border2); }
+.tl-doc-web  { background: var(--green-bg);  color: var(--green);  border: 1px solid var(--green-bd); }
+.tl-doc-vid  { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-bd); }
+@media (max-width: 750px) {
+  .timeline::before { left: 20px; }
+  .tl-item, .tl-item.tl-left { flex-direction: row; }
+  .tl-dot { width: 40px; }
+  .tl-content { width: calc(100% - 40px); }
+}
+
+/* ── MODAL ── */
+.modal-overlay { display:none; position:fixed; inset:0; background:rgba(16,36,72,.55); z-index:9000; align-items:center; justify-content:center; padding:16px; }
+.modal-overlay.open { display:flex; }
+.modal-box { background:#fff; border-radius:13px; max-width:600px; width:100%; max-height:88vh; overflow-y:auto; box-shadow:0 20px 60px rgba(0,0,0,.25); display:flex; flex-direction:column; }
+.modal-head { padding:18px 22px 14px; border-bottom:1.5px solid var(--border); display:flex; align-items:flex-start; gap:12px; position:sticky; top:0; background:#fff; z-index:1; border-radius:13px 13px 0 0; }
+.modal-head-icon { font-size:22px; flex-shrink:0; line-height:1; margin-top:2px; }
+.modal-head-text { flex:1; }
+.modal-head-title { font-family:var(--fh); font-size:16px; font-weight:800; color:var(--navy); line-height:1.3; }
+.modal-head-sub { font-family:var(--fm); font-size:10px; color:var(--text-dim); letter-spacing:.07em; text-transform:uppercase; margin-top:3px; }
+.modal-close { width:30px; height:30px; border-radius:7px; background:var(--bg); border:1px solid var(--border); cursor:pointer; font-size:16px; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--text-muted); transition:background .13s; }
+.modal-close:hover { background:var(--border); }
+.modal-body { padding:18px 22px 22px; }
+.modal-section { margin-bottom:14px; }
+.modal-section h4 { font-family:var(--fh); font-size:12px; font-weight:700; color:var(--navy); margin-bottom:6px; }
+.modal-section p, .modal-section li { font-size:12.5px; color:var(--text-muted); line-height:1.65; }
+.modal-section ul { padding-left:16px; }
+.modal-section li { margin-bottom:3px; }
+.modal-kv { display:grid; grid-template-columns:auto 1fr; gap:4px 12px; font-size:12px; }
+.modal-kv dt { font-family:var(--fm); font-size:9.5px; color:var(--text-dim); text-transform:uppercase; letter-spacing:.05em; padding-top:2px; }
+.modal-kv dd { color:var(--text); font-weight:500; }
+.modal-phase-badge { display:inline-flex; align-items:center; gap:6px; background:var(--amber-bg); border:1px solid var(--amber-bd); border-radius:6px; padding:4px 10px; font-family:var(--fm); font-size:10px; color:var(--amber); font-weight:700; margin-bottom:12px; }
+.modal-divider { height:1px; background:var(--border); margin:12px 0; }
+.modal-links { display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
+.modal-ext-link { display:inline-flex; align-items:center; gap:4px; font-family:var(--fm); font-size:10px; padding:5px 10px; border-radius:6px; text-decoration:none; transition:opacity .13s; }
+.modal-ext-link:hover { opacity:.78; }
+.modal-ext-web  { background:var(--navy); color:#fff; }
+.modal-ext-pdf  { background:var(--red-bg); color:var(--red); border:1px solid var(--red-bd); }
+.modal-ext-page { background:var(--blue-bg); color:var(--blue); border:1px solid var(--blue-bd); }
+.phase-clickable { cursor:pointer; transition:box-shadow .13s, border-color .13s; }
+.phase-clickable:hover { border-color:var(--amber-bd) !important; box-shadow:0 2px 8px rgba(180,83,9,.15); }
+.status-clickable { cursor:pointer; transition:opacity .13s, transform .1s; }
+.status-clickable:hover { opacity:.8; transform:scale(1.05); }
+/* DOC SUB-TABS */
+.sub-tabs { display:flex; gap:0; border-bottom:2px solid var(--border); margin-bottom:18px; }
+.sub-tab { padding:9px 18px; font-family:var(--fm); font-size:10px; letter-spacing:.07em; text-transform:uppercase; color:var(--text-muted); background:none; border:none; border-bottom:2px solid transparent; margin-bottom:-2px; cursor:pointer; transition:color .15s; }
+.sub-tab:hover { color:var(--navy); }
+.sub-tab.active { color:var(--blue); border-bottom-color:var(--blue); font-weight:700; }
+.sub-grid { display:none; }
+.sub-grid.active { display:grid; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); gap:12px; }
+
+
+/* ── MOBILE OPTIMISATION ── */
+@media (max-width: 600px) {
+  header { padding: 0 14px; height: 56px; }
+  .ht { font-size: 13px; }
+  .hm { display: none; }
+  .hero { padding: 28px 14px 24px; }
+  .hero h1 { font-size: 26px; }
+  .hero p { font-size: 13px; }
+  .stats { gap: 16px; }
+  .sv { font-size: 22px; }
+  .nav-tabs { padding: 0 8px; top: 56px; }
+  .tb { padding: 10px 11px; font-size: 9px; }
+  .sb { padding: 10px 14px; }
+  main { padding: 16px 14px; }
+  .grid { grid-template-columns: 1fr; }
+  .nav-grid, .nav-grid-3, .kpi-row, .stakeholder-grid { grid-template-columns: 1fr; }
+  .info-card { padding: 14px 15px; }
+  .phase-row { gap: 0; }
+  .phase { min-width: 80px; padding: 8px 6px; }
+  .phase-title { font-size: 9px; }
+  .comp-table { font-size: 10.5px; }
+  .comp-table th, .comp-table td { padding: 7px 7px; }
+  .timeline::before { left: 18px; }
+  .tl-item, .tl-item.tl-left { flex-direction: row !important; }
+  .tl-dot { width: 36px; }
+  .tl-content { width: calc(100% - 36px) !important; }
+  .tl-year { font-size: 15px; }
+  .tl-title { font-size: 11px; }
+  .tl-desc { font-size: 10.5px; }
+  .modal-box { max-height: 92vh; border-radius: 10px; }
+  .modal-head { padding: 14px 16px 12px; }
+  .modal-body { padding: 14px 16px 18px; }
+  .context-box { padding: 14px 15px; }
+  .sub-tab { padding: 8px 11px; font-size: 9px; }
+  .tl-docs { display: none; } /* hide doc links on mobile to save space */
+  .cwp { padding: 9px 11px; }
+  .highlight-box { padding: 11px 14px; }
+  footer { padding: 12px 14px; flex-direction: column; gap: 4px; }
+}
+@media (max-width: 400px) {
+  .tb { padding: 9px 8px; font-size: 8.5px; }
+  .tc { display: none; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hb">
+    <div class="hi">🗼</div>
+    <div>
+      <div class="ht">Remote &amp; Digital <span>Towers</span></div>
+      <div class="htag">Knowledge Hub · NAV Portugal · GOPLIS</div>
+    </div>
+  </div>
+  <div class="hm"><div>CONOPS Remote TWR</div></div>
+</header>
+
+<div class="hero">
+  <div class="eyebrow">ATC Technology Reference</div>
+  <h1>Remote &amp; Digital Tower<br><span>Operations</span></h1>
+  <p>Centralised knowledge base for Remote Tower Systems — regulatory framework, concept of operations, technical references, industry solutions, European implementation cases and videos.</p>
+  <div class="stats">
+    <div class="stat"><div class="sv">16</div><div class="sl">Documents</div></div>
+    <div class="stat"><div class="sv">13</div><div class="sl">Links</div></div>
+    <div class="stat"><div class="sv">12</div><div class="sl">Cases</div></div>
+    <div class="stat"><div class="sv">7</div><div class="sl">Videos</div></div>
+    <div class="stat"><div class="sv">🇵🇹</div><div class="sl">NAV Portugal</div></div>
+  </div>
+</div>
+
+<div class="nav-tabs">
+  <button class="tb active" onclick="show('docs')" id="tab-docs">📄 Documents <span class="tc">16</span></button>
+  <button class="tb" onclick="show('links')" id="tab-links">🔗 Links <span class="tc">13</span></button>
+  <button class="tb" onclick="show('cases')" id="tab-cases">🌍 Implemented Cases <span class="tc">12</span></button>
+  <button class="tb" onclick="show('videos')" id="tab-videos">▶ Videos <span class="tc">7</span></button>
+  <button class="tb" onclick="show('nav')" id="tab-nav">🇵🇹 NAV Portugal</button>
+  <button class="tb" onclick="show('comp')" id="tab-comp">📊 Comparativo</button>
+  <button class="tb" onclick="show('search')" id="tab-search">🔎 Search All</button>
+</div>
+
+<div class="sb">
+  <div class="sw">
+    <span class="si">🔍</span>
+    <input class="search-input" type="text" id="gs" placeholder="Search documents, links, cases, videos…" oninput="doSearch(this.value)">
+  </div>
+  <span class="sh">Ctrl+K</span>
+  <span id="sri"></span>
+</div>
+
+<main>
+
+<!-- ══════ DOCUMENTS ══════ -->
+<section id="sec-docs" class="sec active">
+  <div class="sec-hd">
+    <h2>Document Library</h2>
+    <small>📥 PDF Online = download from web &nbsp;·&nbsp; 📂 Local = file alongside this app</small>
+  </div>
+  <div class="sub-tabs">
+    <button class="sub-tab active" onclick="showSubTab('docs','all')">📚 Todos</button>
+    <button class="sub-tab" onclick="showSubTab('docs','reg')">⚖️ Regulamentação</button>
+    <button class="sub-tab" onclick="showSubTab('docs','gen')">📄 Documentação Geral</button>
+    <button class="sub-tab" onclick="showSubTab('docs','nav')">🇵🇹 NAV Portugal</button>
+  </div>
+  <div class="sub-grid active" id="docs-all">
+  <div class="grid" id="docs-grid" style="display:contents;">
+
+    <div class="card" data-s="easa guidance material remote tower issue 3 2023 gm acceptable means compliance" data-cat="reg">
+      <div class="ct">
+        <div class="ci ci-easa">📋</div>
+        <div class="bgs"><span class="b b-easa">EASA</span><span class="b b-easa">Issue 3 · 2023</span></div>
+      </div>
+      <div class="cn">GM on Remote Tower Operations — Issue 3 (2023)</div>
+      <div class="cd">EASA Guidance Material on Remote Tower Operations, Issue 3 — the current baseline. Associated with ED Decision 2023-005-R.</div>
+      <div class="cl">
+        <a class="bl bl-on" href="https://www.easa.europa.eu/en/downloads/137788/en" target="_blank">📥 PDF Download</a>
+        <a class="bl bl-pg" href="https://www.easa.europa.eu/en/document-library/acceptable-means-of-compliance-and-guidance-material/gm-remote-tower-operations-1" target="_blank">🔗 EASA Library</a>
+        <a class="bl bl-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/GM_on_remote_tower_operations_-_Issue_3.pdf" target="_blank">📂 Local File</a>
+      </div>
+    </div>
+
+    <div class="card" data-s="easa guidance material remote tower issue 2 2019 annex ed decision 2019 2023 regulatory" data-cat="reg">
+      <div class="ct">
+        <div class="ci ci-easa">📋</div>
+        <div class="bgs"><span class="b b-easa">EASA</span><span class="b b-easa">Issue 2 · 2019</span></div>
+      </div>
+      <div class="cn">GM on Remote Tower Operations — Issue 2 (2019) + ED Decisions</div>
+      <div class="cd">EASA Annex I Guidance Material Issue 2 (2019). Includes links to ED Decision 2019-004-R (Issue 2) and ED Decision 2023-005-R (Issue 3).</div>
+      <div class="cl">
+        <a class="bl bl-on" href="https://www.easa.europa.eu/en/downloads/71515/en" target="_blank">📥 GM Issue 2 PDF</a>
+        <a class="bl bl-pg" href="https://www.easa.europa.eu/en/document-library/agency-decisions/ed-decision-2019004r" target="_blank">🔗 ED Decision 2019 (Issue 2)</a>
+        <a class="bl bl-pg" href="https://www.easa.europa.eu/en/document-library/agency-decisions/ed-decision-2023005r" target="_blank">🔗 ED Decision 2023 (Issue 3)</a>
+        <a class="bl bl-on" href="https://www.easa.europa.eu/en/downloads/71513/en" target="_blank">📥 ED 2019-004-R PDF</a>
+        <a class="bl bl-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/Annex%20I%20%E2%80%94GM%20on%20remote%20aerodrome%20air%20traffic%20services%20%E2%80%94Issue%202.pdf" target="_blank">📂 Local (Issue 2)</a>
+        <a class="bl bl-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/ED%20Decision%202019-004-R.pdf" target="_blank">📂 Local (ED 2019)</a>
+        <a class="bl bl-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/ed_decision_2023-005-r.pdf" target="_blank">📂 Local (ED 2023)</a>
+      </div>
+    </div>
+
+    <div class="card" data-s="easy access rules remote aerodrome air traffic services easa guidance 2020" data-cat="reg">
+      <div class="ct">
+        <div class="ci ci-easa">📘</div>
+        <div class="bgs"><span class="b b-easa">EASA</span><span class="b b-easa">Easy Access</span></div>
+      </div>
+      <div class="cn">Easy Access Rules — Remote Aerodrome ATS (2020)</div>
+      <div class="cd">EASA consolidated "Easy Access" format of all rules and guidance for remote aerodrome air traffic services. Practical all-in-one reference.</div>
+      <div class="cl">
+        <a class="bl bl-on" href="https://www.easa.europa.eu/en/downloads/116601/en" target="_blank">📥 PDF Download</a>
+        <a class="bl bl-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/011%20-%202020.07.27%20-%20Easy%20Access%20Rules%20for%20guidance%20material%20on%20Remote%20Aerodrome%20Air%20Traffic%20Services.pdf" target="_blank">📂 Local File</a>
+      </div>
+    </div>
+
+    <div class="card" data-s="ATC bulletin remote towers SESAR news operational" data-cat="gen">
+      <div class="ct">
+        <div class="ci ci-pdf">📰</div>
+        <div class="bgs"><span class="b b-std">SESAR</span></div>
+      </div>
+      <div class="cn">ATC Bulletin — Remote Towers</div>
+      <div class="cd">ATC professional bulletin on remote tower operations published by SESAR JU. Industry news and operational developments.</div>
+      <div class="cl">
+        <a class="bl bl-on" href="https://www.sesarju.eu/sites/default/files/documents/press-coverage/ATC-Bulletin-Remote-Towers.pdf" target="_blank">📥 PDF Download</a>
+        <a class="bl bl-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/ATC%20bulletin%20remote%20towers.pdf" target="_blank">📂 Local File</a>
+      </div>
+    </div>
+
+    <div class="card" data-s="conops DC-ANSP airspace route redesign Curaçao Bonaire TNCF TNCC TNCB" data-cat="gen">
+      <div class="ct">
+        <div class="ci ci-cops">🗺️</div>
+        <div class="bgs"><span class="b b-cop">ConOps</span><span class="b b-std">Curaçao</span></div>
+      </div>
+      <div class="cn">ConOps — Airspace &amp; Route Redesign (Curaçao/Bonaire)</div>
+      <div class="cd">Concept of operations for airspace and route redesign covering TNCF, TNCC (Curaçao) and TNCB (Bonaire). DC-ANSP study on remote/digital ATC concepts.</div>
+      <div class="cl">
+        <a class="bl bl-on" href="https://gobiernu.cw/wp-content/uploads/2021/02/CONOPS-Airspace-Redesign-v2-signed-1.pdf" target="_blank">📥 PDF Download</a>
+        <a class="bl bl-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/Concept%20of%20Operations%20DC-ANSP%20airspace%20and%20route%20redesign%20.pdf" target="_blank">📂 Local File</a>
+      </div>
+    </div>
+
+    <div class="card" data-s="CRD comment response document 2022-02 EASA rulemaking remote tower stakeholder feedback" data-cat="reg">
+      <div class="ct">
+        <div class="ci ci-easa">📋</div>
+        <div class="bgs"><span class="b b-easa">EASA CRD</span></div>
+      </div>
+      <div class="cn">CRD 2022-02 — Remote Tower Rulemaking</div>
+      <div class="cd">EASA Comment Response Document (CRD) 2022-02. Consolidated stakeholder feedback and EASA responses from the remote tower rulemaking process.</div>
+      <div class="cl">
+        <a class="bl bl-on" href="https://www.easa.europa.eu/en/document-library/comment-response-documents/crd-2022-02" target="_blank">📥 EASA CRD Page</a>
+        <a class="bl bl-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/crd_2022-02.pdf" target="_blank">📂 Local File</a>
+      </div>
+    </div>
+
+    <div class="card" data-s="DFS remote tower center Leipzig Erfurt Germany operational case study" data-cat="gen">
+      <div class="ct">
+        <div class="ci ci-pdf">🏛️</div>
+        <div class="bgs"><span class="b b-std">Case Study</span><span class="b b-std">DFS · Germany</span></div>
+      </div>
+      <div class="cn">DFS Remote Tower Center — Leipzig</div>
+      <div class="cd">Technical and operational documentation of the DFS Remote Tower Center (RTC) in Leipzig. Controls Erfurt-Weimar remotely. Key European implementation reference.</div>
+      <div class="cl">
+        <a class="bl bl-on" href="https://eu-lac-app.eu/public/uploads/DFS_Projekt_RTC_20231024_eng.pdf" target="_blank">📥 PDF Download</a>
+        <a class="bl bl-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/DSF%20Remote%20Tower%20Center%20Leipzig.pdf" target="_blank">📂 Local File</a>
+      </div>
+    </div>
+
+    <div class="card" data-s="ENAC remote tower international seminar Frequentis Gridling conference presentations" data-cat="gen">
+      <div class="ct">
+        <div class="ci ci-pdf">🎓</div>
+        <div class="bgs"><span class="b b-std">Seminar</span></div>
+      </div>
+      <div class="cn">ENAC Remote Tower International Seminar</div>
+      <div class="cd">Materials from the ENAC International Remote Tower Seminar. Online link: Frequentis/Gridling presentation. Full proceedings in local file.</div>
+      <div class="cl">
+        <a class="bl bl-on" href="https://www.enac.fr/sites/default/files/rt10_p.gridling_frequentis.pdf" target="_blank">📥 Frequentis Presentation</a>
+        <a class="bl bl-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/ENAC%20Remote%20Tower%20International%20Seminar.pdf" target="_blank">📂 Local File (Full)</a>
+      </div>
+    </div>
+
+    <div class="card" data-s="Frequentis whitepaper remote virtual tower introduction vendor technology product" data-cat="gen">
+      <div class="ct">
+        <div class="ci ci-pdf">🏭</div>
+        <div class="bgs"><span class="b b-ind">Industry</span><span class="b b-ind">Frequentis</span></div>
+      </div>
+      <div class="cn">Frequentis — Introduction to Remote &amp; Virtual Tower (Whitepaper)</div>
+      <div class="cd">Frequentis whitepaper on remote and virtual tower technology. Vendor perspective, system architecture, and operational capabilities overview.</div>
+      <div class="cl">
+        <a class="bl bl-on" href="https://www.frequentis.com/sites/default/files/support/2018-02/RVT_whitepaper.pdf" target="_blank">📥 PDF Download</a>
+        <a class="bl bl-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/FREQUENTIS%20Whitepaper%20Introduction%20to%20remote%20virtual%20tower.pdf" target="_blank">📂 Local File</a>
+      </div>
+    </div>
+
+    <div class="card" data-s="FAA remote tower systems concept operations ConOps United States federal aviation administration 2020" data-cat="gen">
+      <div class="ct">
+        <div class="ci ci-cops">⚙️</div>
+        <div class="bgs"><span class="b b-faa">FAA</span><span class="b b-cop">ConOps</span></div>
+      </div>
+      <div class="cn">FAA — Remote Tower Systems ConOps (v1.0, 2020)</div>
+      <div class="cd">US Federal Aviation Administration concept of operations for Remote Tower Systems, v1.0 (April 2020). Useful comparative reference with European approach.</div>
+      <div class="cl">
+        <a class="bl bl-on" href="https://www.faa.gov/sites/faa.gov/files/rt-conops-version-1-0-2020-04-07.pdf" target="_blank">📥 PDF Download</a>
+        <a class="bl bl-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/Remote%20Tower%20Systems%20Concept%20of%20Operations%20%28ConOps%29.pdf" target="_blank">📂 Local PDF</a>
+        <a class="bl bl-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/Remote%20Tower%20Systems%20Concept%20of%20Operations%20%28ConOps%29%20EN.docx" target="_blank">📂 Local DOCX</a>
+      </div>
+    </div>
+
+    <div class="card" data-s="remote air traffic control towers application study Portugal Portuguese research UPC university" data-cat="gen">
+      <div class="ct">
+        <div class="ci ci-pdf">🔬</div>
+        <div class="bgs"><span class="b b-std">Research</span><span class="b b-std">🇵🇹 Portugal</span></div>
+      </div>
+      <div class="cn">Remote ATC Towers — An Application Study (Portugal)</div>
+      <div class="cd">Portuguese academic study on remote air traffic control towers. Analysis of implementation challenges, human factors, and operational considerations. Published via UPC Commons.</div>
+      <div class="cl">
+        <a class="bl bl-on" href="https://upcommons.upc.edu/server/api/core/bitstreams/b19699d1-9acb-4c93-84a7-c3c8c75b9d03/content" target="_blank">📥 PDF Download</a>
+        <a class="bl bl-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/Remote_air_traffic_control_towers_An_application_i.pdf" target="_blank">📂 Local File</a>
+      </div>
+    </div>
+
+    <div class="card" data-s="what to consider implementing remote towers Colombia GIS journal planning operational" data-cat="gen">
+      <div class="ct">
+        <div class="ci ci-pdf">✅</div>
+        <div class="bgs"><span class="b b-easa">Guide</span><span class="b b-std">🇨🇴 Colombia</span></div>
+      </div>
+      <div class="cn">What to Consider When Implementing Remote Towers (Colombia)</div>
+      <div class="cd">Article on practical implementation considerations for remote tower systems. Colombian context, broadly applicable. Technical, operational, and regulatory aspects.</div>
+      <div class="cl">
+        <a class="bl bl-on" href="https://www.gisjournal.us.edu.pl/index.php/gis-odyssey-journal/article/view/70/57" target="_blank">📥 PDF Download</a>
+        <a class="bl bl-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/What_to_consider_when_implementing_.pdf" target="_blank">📂 Local File</a>
+      </div>
+    </div>
+
+    <div class="card" data-s="CONOPS PST remote tower NAV Portugal internal working document" data-cat="nav">
+      <div class="ct">
+        <div class="ci ci-nav">⚙️</div>
+        <div class="bgs"><span class="b b-nav">NAV Portugal</span><span class="b b-cop">ConOps</span><span class="b b-loc">Local</span></div>
+      </div>
+      <div class="cn">CONOPS PST Remote TWR — NAV Portugal</div>
+      <div class="cd">Internal NAV Portugal concept of operations for remote tower PST operations. Working document, not publicly available.</div>
+      <div class="cl">
+        <a class="bl bl-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/CONOPS%20PST%20remote%20TWR.docx" target="_blank">📂 Local File</a>
+      </div>
+    </div>
+
+    <div class="card" data-s="CONOPS TWRFUN plano implementação NAV Portugal Funchal remote tower V1 OPS PST" data-cat="nav">
+      <div class="ct">
+        <div class="ci ci-nav">⚙️</div>
+        <div class="bgs"><span class="b b-nav">NAV Portugal</span><span class="b b-cop">ConOps v1.1</span><span class="b b-loc">Local</span></div>
+      </div>
+      <div class="cn">ConOps TWRFUN — Plano de Implementação v1.1</div>
+      <div class="cd">NAV Portugal — Concept of Operations with implementation plan for remote TWR operations (TWRFUN). Internal working document, version 1.1.</div>
+      <div class="cl">
+        <a class="bl bl-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/Conops%20TWRFUN%20com%20plano%20de%20implementa%C3%A7%C3%A3o_v1.1..docx" target="_blank">📂 Local File</a>
+      </div>
+    </div>
+
+    <div class="card" data-s="IAA Ireland human performance MRTO multiple remote tower operations single controller manuscript" data-cat="nav">
+      <div class="ct">
+        <div class="ci ci-doc">✍️</div>
+        <div class="bgs"><span class="b b-std">Research</span><span class="b b-std">IAA</span><span class="b b-loc">Local</span></div>
+      </div>
+      <div class="cn">IAA — Human Performance Assessment: Single ATCO in Multiple Remote Tower Operations (2019)</div>
+      <div class="cd">Irish Aviation Authority final research manuscript (2019): "Human Performance Assessment of a Single Air Traffic Controller Conducting Multiple Remote Tower Operations." Key MRTO human factors reference.</div>
+      <div class="cl">
+        <a class="bl bl-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/IAA%202019MRTOFinalManuscript.docx" target="_blank">📂 Local File</a>
+      </div>
+    </div>
+
+
+  </div>
+  </div>
+</section>
+
+
+<!-- ══════ LINKS ══════ -->
+<section id="sec-links" class="sec">
+  <div class="sec-hd"><h2>External Links</h2><small>All links open in new tab</small></div>
+  <div class="grid" id="links-grid">
+
+    <a class="card" href="https://www.easa.europa.eu/en/document-library/acceptable-means-of-compliance-and-guidance-material/gm-remote-tower-operations-1" target="_blank" data-s="EASA remote tower GM guidance material regulatory library">
+      <div class="ct"><div class="ci ci-easa">🏛️</div><div class="bgs"><span class="b b-easa">EASA</span></div></div>
+      <div class="cn">EASA — GM on Remote Tower Operations</div>
+      <div class="cd">EASA library page for the Guidance Material on Remote Tower Operations. Authoritative regulatory source, Issue 3 (2023).</div>
+      <div class="cl"><span class="bl bl-ext">↗ Visit</span></div>
+    </a>
+
+    <a class="card" href="https://www.nats.aero/our-solutions/digital-towers/" target="_blank" data-s="NATS UK digital tower London City Southampton solutions">
+      <div class="ct"><div class="ci ci-lnk">🇬🇧</div><div class="bgs"><span class="b b-ind">NATS</span></div></div>
+      <div class="cn">Digital Towers — NATS (UK)</div>
+      <div class="cd">NATS digital tower solutions page. Operational at London City and Southampton; covers system architecture, camera technology, and operational model.</div>
+      <div class="cl"><span class="bl bl-ext">↗ Visit</span></div>
+    </a>
+
+    <a class="card" href="https://www.frequentis.com/en/air-traffic-management/focus-areas/remote-digital-tower" target="_blank" data-s="Frequentis remote digital tower vendor ATC technology provider">
+      <div class="ct"><div class="ci ci-lnk">🏭</div><div class="bgs"><span class="b b-ind">Frequentis</span></div></div>
+      <div class="cn">Remote &amp; Digital Tower — Frequentis</div>
+      <div class="cd">Frequentis remote and digital tower focus area. Operational in Norway, Germany, UK, Hungary and others. Industry-leading system provider.</div>
+      <div class="cl"><span class="bl bl-ext">↗ Visit</span></div>
+    </a>
+
+    <a class="card" href="https://www.saab.com/products/r-twr" target="_blank" data-s="Saab r-TWR remote tower product Sweden Norway certified first operational">
+      <div class="ct"><div class="ci ci-lnk">🇸🇪</div><div class="bgs"><span class="b b-ind">Saab</span></div></div>
+      <div class="cn">r-TWR Family — Saab</div>
+      <div class="cd">Saab's r-TWR remote tower product. Pioneer of certified remote tower operations; deployed operationally in Sweden (2015) and Norway.</div>
+      <div class="cl"><span class="bl bl-ext">↗ Visit</span></div>
+    </a>
+
+    <a class="card" href="https://searidgetech.com/digital-apron-control-tower/digital-tower/" target="_blank" data-s="Searidge remote digital tower technology Frequentis NATS AI video">
+      <div class="ct"><div class="ci ci-lnk">🏭</div><div class="bgs"><span class="b b-ind">Searidge</span></div></div>
+      <div class="cn">Digital Tower — Searidge Technologies</div>
+      <div class="cd">Searidge digital tower platform. Partner with Frequentis and NATS at London City Airport. Specialises in AI-enhanced video for aerodrome surveillance.</div>
+      <div class="cl"><span class="bl bl-ext">↗ Visit</span></div>
+    </a>
+
+    <a class="card" href="https://airtraffic.indragroup.com/en/blog/how-the-worlds-largest-remote-digital-tower-centre-operates" target="_blank" data-s="Indra remote digital tower centre largest Budapest Hungary Avinor operational">
+      <div class="ct"><div class="ci ci-lnk">🏭</div><div class="bgs"><span class="b b-ind">Indra</span></div></div>
+      <div class="cn">How the World's Largest Remote Digital Tower Centre Operates — Indra</div>
+      <div class="cd">Indra article on the world's largest remote digital tower centre. Operational model, technology, and multi-airport remote control scale.</div>
+      <div class="cl"><span class="bl bl-ext">↗ Visit</span></div>
+    </a>
+
+    <a class="card" href="https://om.avinor.no/en/aviation-safety/digital-towers/" target="_blank" data-s="Avinor Norway digital tower remote multiple airports ANSP programme">
+      <div class="ct"><div class="ci ci-lnk">🇳🇴</div><div class="bgs"><span class="b b-ind">Avinor</span></div></div>
+      <div class="cn">Digital Towers — Avinor (Norway)</div>
+      <div class="cd">Avinor (Norway) digital tower programme. World leader with remote tower services across 15+ Norwegian airports managed from centralised RTCs.</div>
+      <div class="cl"><span class="bl bl-ext">↗ Visit</span></div>
+    </a>
+
+    <a class="card" href="https://www.sesarju.eu" target="_blank" data-s="SESAR Joint Undertaking remote tower research deployment Europe validation">
+      <div class="ct"><div class="ci ci-lnk">🇪🇺</div><div class="bgs"><span class="b b-std">SESAR JU</span></div></div>
+      <div class="cn">SESAR Joint Undertaking</div>
+      <div class="cd">SESAR JU — funded and coordinated multiple remote tower validation exercises across Europe. Key contributor to the EASA regulatory framework.</div>
+      <div class="cl"><span class="bl bl-ext">↗ Visit</span></div>
+    </a>
+
+    <a class="card" href="https://ifatca.org/remote-towers-guidance/" target="_blank" data-s="IFATCA remote tower guidance controllers association position policy">
+      <div class="ct"><div class="ci ci-lnk">🌍</div><div class="bgs"><span class="b b-std">IFATCA</span></div></div>
+      <div class="cn">Remote Towers Guidance — IFATCA</div>
+      <div class="cd">IFATCA (International Federation of Air Traffic Controllers' Associations) official guidance and position on remote tower operations. Controller perspective and policy recommendations.</div>
+      <div class="cl"><span class="bl bl-ext">↗ Visit</span></div>
+    </a>
+
+    <a class="card" href="https://www.thalesgroup.com/en/markets/defence-and-security/air-traffic-management/products/remote-tower" target="_blank" data-s="Thales remote tower system vendor France ATC technology product">
+      <div class="ct"><div class="ci ci-lnk">🏭</div><div class="bgs"><span class="b b-ind">Thales</span></div></div>
+      <div class="cn">Remote Tower — Thales Group</div>
+      <div class="cd">Thales remote tower system. French multinational defence company's offering for remote aerodrome surveillance and air traffic control.</div>
+      <div class="cl"><span class="bl bl-ext">↗ Visit</span></div>
+    </a>
+
+    <a class="card" href="https://ibross.com" target="_blank" data-s="iBross remote tower technology products small aerodrome regional">
+      <div class="ct"><div class="ci ci-lnk">🏭</div><div class="bgs"><span class="b b-ind">iBross</span></div></div>
+      <div class="cn">Products — iBross</div>
+      <div class="cd">iBross remote tower technology solutions for smaller aerodromes and regional airports.</div>
+      <div class="cl"><span class="bl bl-ext">↗ Visit</span></div>
+    </a>
+
+    <a class="card" href="https://www.sciencedirect.com/science/article/abs/pii/S0965856417303397" target="_blank" data-s="human performance remote tower single controller multiple operations research sciencedirect">
+      <div class="ct"><div class="ci ci-lnk">🔬</div><div class="bgs"><span class="b b-std">Research</span></div></div>
+      <div class="cn">Human Performance — Multiple Remote Tower Ops (ScienceDirect)</div>
+      <div class="cd">Academic research: human performance of a single ATCO conducting multiple simultaneous remote tower operations. Transportation Research, ScienceDirect.</div>
+      <div class="cl"><span class="bl bl-ext">↗ Visit</span></div>
+    </a>
+
+    <a class="card" href="https://www.londoncityairport.com/media-centre/press-releases/one-year-on-london-citys-digital-air-traffic-control-tower" target="_blank" data-s="London City Airport digital air traffic control tower one year NATS Frequentis press">
+      <div class="ct"><div class="ci ci-lnk">✈️</div><div class="bgs"><span class="b b-std">Case</span></div></div>
+      <div class="cn">One Year On — London City Digital ATC Tower</div>
+      <div class="cd">London City Airport press release marking one year of digital tower operations. Operational statistics, lessons learned, and future plans.</div>
+      <div class="cl"><span class="bl bl-ext">↗ Visit</span></div>
+    </a>
+
+  </div>
+</section>
+
+
+<!-- ══════ IMPLEMENTED CASES ══════ -->
+<section id="sec-cases" class="sec">
+  <div class="sec-hd"><h2>Implemented Cases</h2><small>Remote &amp; Digital Towers in Europe · tags are clickable links ↗</small></div>
+  <div class="grid" id="cases-grid">
+
+    <!-- LFV SWEDEN -->
+    <div class="cc" data-s="sweden LFV Örnsköldsvik Sundsvall Saab remote tower first certified 2015">
+      <div class="cc-top">
+        <div class="flag">🇸🇪</div>
+        <div><div class="cc-name">LFV — Sweden</div><div class="cc-sub">Luftfartsverket · Sweden</div></div>
+        <div class="cc-st st-live">Live · Since 2015</div>
+      </div>
+      <div class="cc-desc">World's first ICAO-certified operational remote tower. LFV with Saab's r-TWR system controls Örnsköldsvik from Sundsvall since April 2015. Extended to multiple Swedish airports from Stockholm Arlanda.</div>
+      <div class="tags">
+        <a class="tag" href="https://lfv.se/en/about-us/this-is-lfv/lfv-holding-and-subsidiaries/lfv-aviation-consulting/portfolio/remote-tower" target="_blank">LFV Remote Towers ↗</a>
+        <a class="tag" href="https://www.saab.com/products/r-twr" target="_blank">Saab r-TWR ↗</a>
+        <a class="tag" href="https://www.lfv.se/en/services/airport-services/remote-tower-services" target="_blank">Örnsköldsvik · Sundsvall ↗</a>
+        <span class="tag">ICAO Certified</span><span class="tag">Multi-Airport RTC</span>
+      </div>
+      <div class="cc-ft"><a class="cc-lnk" href="https://www.lfv.se/" target="_blank">↗ LFV Website</a></div>
+    </div>
+
+    <!-- AVINOR NORWAY -->
+    <div class="cc" data-s="norway Avinor remote tower multiple airports Saab Frequentis RTC Bodø Indra largest">
+      <div class="cc-top">
+        <div class="flag">🇳🇴</div>
+        <div><div class="cc-name">Avinor — Norway</div><div class="cc-sub">Avinor · Norway</div></div>
+        <div class="cc-st st-live">Live · 15+ Airports</div>
+      </div>
+      <div class="cc-desc">Avinor operates remote tower services across 15+ small Norwegian airports from centralised RTCs. World leader in large-scale deployment; uses Saab and Frequentis systems. Home to one of the world's largest RTCs.</div>
+      <div class="tags">
+        <a class="tag" href="https://www.saab.com/products/r-twr" target="_blank">Saab r-TWR ↗</a>
+        <a class="tag" href="https://www.frequentis.com/en/air-traffic-management/focus-areas/remote-digital-tower" target="_blank">Frequentis ↗</a>
+        <a class="tag" href="https://om.avinor.no/en/aviation-safety/digital-towers/" target="_blank">15+ Airports ↗</a>
+        <a class="tag" href="https://www.kongsberg.com/news/stories/2025/5/remote-towers-a-new-standard-for-air-traffic-management/" target="_blank">RTC Bodø ↗</a>
+        <a class="tag" href="https://airtraffic.indragroup.com/en/blog/how-the-worlds-largest-remote-digital-tower-centre-operates" target="_blank">Indra ↗</a>
+      </div>
+      <div class="cc-ft"><a class="cc-lnk" href="https://om.avinor.no/" target="_blank">↗ Avinor Digital Towers</a></div>
+    </div>
+
+    <!-- NATS UK -->
+    <div class="cc" data-s="UK NATS digital tower London City Southampton Frequentis Searidge 4K AI video cameras">
+      <div class="cc-top">
+        <div class="flag">🇬🇧</div>
+        <div><div class="cc-name">NATS — United Kingdom</div><div class="cc-sub">NATS · United Kingdom</div></div>
+        <div class="cc-st st-live">Live · London City 2022</div>
+      </div>
+      <div class="cc-desc">NATS Digital Tower at London City Airport — first digital tower at a major international hub. Controllers use 4K panoramic cameras and AI-enhanced video. Also operational at Southampton.</div>
+      <div class="tags">
+        <a class="tag" href="https://www.frequentis.com/en/air-traffic-management/focus-areas/remote-digital-tower" target="_blank">Frequentis ↗</a>
+        <a class="tag" href="https://searidgetech.com/digital-apron-control-tower/digital-tower/" target="_blank">Searidge ↗</a>
+        <a class="tag" href="https://www.londoncityairport.com/media-centre/press-releases/one-year-on-london-citys-digital-air-traffic-control-tower" target="_blank">London City Airport ↗</a>
+        <a class="tag" href="https://www.youtube.com/watch?v=MsoxL6tMG_I" target="_blank">▶ 4K Video + AI ↗</a>
+        <a class="tag" href="https://www.nats.aero/our-solutions/digital-towers/" target="_blank">Southampton ↗</a>
+      </div>
+      <div class="cc-ft"><a class="cc-lnk" href="https://www.nats.aero/our-solutions/digital-towers/" target="_blank">↗ NATS Digital Tower</a></div>
+    </div>
+
+    <!-- DFS GERMANY -->
+    <div class="cc" data-s="Germany DFS remote tower center Leipzig Erfurt Weimar Frequentis operational RTC panoramic">
+      <div class="cc-top">
+        <div class="flag">🇩🇪</div>
+        <div><div class="cc-name">DFS — Germany</div><div class="cc-sub">DFS Deutsche Flugsicherung · Germany</div></div>
+        <div class="cc-st st-live">Live · Leipzig RTC</div>
+      </div>
+      <div class="cc-desc">DFS operates the Remote Tower Centre (RTC) in Leipzig, controlling Erfurt-Weimar airport remotely. One of Europe's most advanced operational RTCs, using Frequentis system with panoramic cameras.</div>
+      <div class="tags">
+        <a class="tag" href="https://www.frequentis.com/en/air-traffic-management/focus-areas/remote-digital-tower" target="_blank">Frequentis ↗</a>
+        <a class="tag" href="https://www.dfs.de/homepage/en/media/press/2022/28-04-2022-expansion-of-the-dfs-remote-tower-control-centre/" target="_blank">Leipzig RTC ↗</a>
+        <a class="tag" href="https://www.dfs.de/homepage/de/medien/presse/2022/28-04-2022-dfs-kontrolliert-erfurter-flugverkehr-von-leipzig-aus/" target="_blank">Erfurt-Weimar ↗</a>
+      </div>
+      <div class="cc-ft"><a class="cc-lnk" href="https://www.dfs.de/homepage/de/unternehmen/standorte/" target="_blank">↗ DFS Website</a></div>
+    </div>
+
+    <!-- IAA IRELAND -->
+    <div class="cc" data-s="Ireland IAA remote tower MRTO multiple operations human performance SESAR Saab research">
+      <div class="cc-top">
+        <div class="flag">🇮🇪</div>
+        <div><div class="cc-name">IAA — Ireland</div><div class="cc-sub">Irish Aviation Authority · Ireland</div></div>
+        <div class="cc-st st-op">Operational</div>
+      </div>
+      <div class="cc-desc">IAA pioneered Multiple Remote Tower Operations (MRTO) research and testing. Focused on managing multiple Irish airports from a single RTC. Leading human factors research partner in SESAR.</div>
+      <div class="tags">
+        <a class="tag" href="https://www.sciencedirect.com/science/article/abs/pii/S0965856417303397" target="_blank">MRTO Research ↗</a>
+        <a class="tag" href="https://www.sesarju.eu/" target="_blank">SESAR ↗</a>
+        <a class="tag" href="https://www.saab.com/products/r-twr" target="_blank">Saab · Multiple Airports ↗</a>
+      </div>
+      <div class="cc-ft"><a class="cc-lnk" href="https://www.iaa.ie" target="_blank">↗ IAA Website</a></div>
+    </div>
+
+    <!-- HUNGAROCONTROL -->
+    <div class="cc" data-s="Hungary HungaroControl remote digital tower Budapest Frequentis Indra Central Eastern Europe advanced">
+      <div class="cc-top">
+        <div class="flag">🇭🇺</div>
+        <div><div class="cc-name">HungaroControl — Hungary</div><div class="cc-sub">HungaroControl · Hungary</div></div>
+        <div class="cc-st st-op">Operational · 2022</div>
+      </div>
+      <div class="cc-desc">HungaroControl operates a remote tower from Budapest, controlling Győr-Pér airport. First operational remote tower in Central-Eastern Europe; one of the world's most advanced setups according to Indra.</div>
+      <div class="tags">
+        <a class="tag" href="https://www.frequentis.com/en/air-traffic-management/focus-areas/remote-digital-tower" target="_blank">Frequentis ↗</a>
+        <a class="tag" href="https://airtraffic.indragroup.com/en/blog/the-worlds-most-advanced-remote-digital-tower-is-in" target="_blank">Budapest RTC ↗</a>
+        <a class="tag" href="https://airtraffic.indragroup.com/en/blog/how-the-worlds-largest-remote-digital-tower-centre-operates" target="_blank">Indra ↗</a>
+      </div>
+      <div class="cc-ft"><a class="cc-lnk" href="https://en.hungarocontrol.hu/" target="_blank">↗ HungaroControl</a></div>
+    </div>
+
+    <!-- AUSTRO CONTROL -->
+    <div class="cc" data-s="Austria Austro Control remote tower Frequentis Vienna development trial aerodrome">
+      <div class="cc-top">
+        <div class="flag">🇦🇹</div>
+        <div><div class="cc-name">Austro Control — Austria</div><div class="cc-sub">Austro Control · Austria</div></div>
+        <div class="cc-st st-tr">Trial / Development</div>
+      </div>
+      <div class="cc-desc">Austro Control exploring remote tower implementation for smaller Austrian aerodromes. Collaboration with Frequentis (headquartered in Vienna) on system development and operational trials.</div>
+      <div class="tags">
+        <a class="tag" href="https://www.frequentis.com/en/air-traffic-management/focus-areas/remote-digital-tower" target="_blank">Frequentis ↗</a>
+        <a class="tag" href="https://triac.aero/portfolio/" target="_blank">TRIAC ↗</a>
+        <a class="tag" href="https://adbsafegate.com/interactive-airport/" target="_blank">ADB SAFEGATE ↗</a>
+      </div>
+      <div class="cc-ft"><a class="cc-lnk" href="https://www.austrocontrol.at" target="_blank">↗ Austro Control</a></div>
+    </div>
+
+    <!-- NAV PORTUGAL -->
+    <div class="cc" data-s="Portugal NAV Portugal remote tower CONOPS PST TWRFUN Funchal FIR Lisboa Santa Maria development">
+      <div class="cc-top">
+        <div class="flag">🇵🇹</div>
+        <div><div class="cc-name">NAV Portugal</div><div class="cc-sub">NAV Portugal E.P.E. · Portugal</div></div>
+        <div class="cc-st st-tr">CONOPS Development</div>
+      </div>
+      <div class="cc-desc">NAV Portugal developing the concept of operations for remote tower services (PST). Working documents cover CONOPS for TWRFUN with implementation plan. Feasibility assessment within FIR Lisboa and FIR Santa Maria.</div>
+      <div class="tags">
+        <span class="tag">CONOPS Phase</span><span class="tag">TWRFUN / PST</span>
+      </div>
+      <div class="cc-ft"><a class="cc-lnk" href="https://www.nav.pt" target="_blank">↗ NAV Portugal Website</a></div>
+    </div>
+
+    <!-- SESAR -->
+    <div class="cc" data-s="SESAR Europe remote tower research validation deployment DFS LFV Avinor ENAV IAA multi-ANSP">
+      <div class="cc-top">
+        <div class="flag">🇪🇺</div>
+        <div><div class="cc-name">SESAR Deployments</div><div class="cc-sub">SESAR Joint Undertaking · Europe</div></div>
+        <div class="cc-st st-live">Pan-European</div>
+      </div>
+      <div class="cc-desc">SESAR JU funded and coordinated multiple remote tower validations and deployments across Europe. Key contributor to EASA regulatory framework. Partners: DFS, LFV, Avinor, ENAV, IAA and others.</div>
+      <div class="tags">
+        <a class="tag" href="https://www.sesarju.eu/activities" target="_blank">SESAR 1 &amp; 2020 ↗</a>
+        <a class="tag" href="https://www.sesarju.eu/news/aware-validation-exercises-test-ai-supported-situational-awareness-malmo" target="_blank">Validation Studies ↗</a>
+        <a class="tag" href="https://www.sesarju.eu/sesar-solutions/multiple-remote-tower-module" target="_blank">Multi-ANSP ↗</a>
+        <a class="tag" href="https://www.easa.europa.eu/en/domains/safety-management/aviation-safety-reporting/legal-framework" target="_blank">EASA Framework ↗</a>
+      </div>
+      <div class="cc-ft"><a class="cc-lnk" href="https://www.sesarju.eu" target="_blank">↗ SESAR JU</a></div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════ VIDEOS ══════ -->
+<section id="sec-videos" class="sec">
+  <div class="sec-hd"><h2>Videos</h2><small>Remote &amp; Digital Tower demonstrations, operational footage, industry</small></div>
+  <div class="grid" id="videos-grid">
+
+    <a class="card" href="https://www.youtube.com/watch?v=3RkPsyCUeG0" target="_blank" data-s="remote tower video overview ATC operations YouTube">
+      <div class="ct"><div class="ci ci-vid">▶️</div><div class="bgs"><span class="b b-vid">YouTube</span></div></div>
+      <div class="cn">Remote Towers — Overview Video</div>
+      <div class="cd">Overview video on remote tower operations. General introduction to the concept, technology, and operational environment.</div>
+      <div class="cl"><span class="bl bl-vid">▶ Watch on YouTube</span></div>
+    </a>
+
+    <a class="card" href="https://www.youtube.com/watch?v=MsoxL6tMG_I" target="_blank" data-s="NATS London City digital tower 4K cameras AI video Frequentis Searidge YouTube">
+      <div class="ct"><div class="ci ci-vid">▶️</div><div class="bgs"><span class="b b-vid">YouTube</span><span class="b b-ind">NATS</span></div></div>
+      <div class="cn">NATS — London City Digital Tower (4K + AI)</div>
+      <div class="cd">NATS digital tower at London City Airport — 4K panoramic cameras, AI-enhanced target detection, controller workstation. First digital tower at a major international hub.</div>
+      <div class="cl"><span class="bl bl-vid">▶ Watch on YouTube</span></div>
+    </a>
+
+    <a class="card" href="https://www.youtube.com/results?search_query=Frequentis+remote+digital+tower+ATC" target="_blank" data-s="Frequentis remote digital tower video demonstration technology product YouTube">
+      <div class="ct"><div class="ci ci-vid">▶️</div><div class="bgs"><span class="b b-vid">YouTube</span><span class="b b-ind">Frequentis</span></div></div>
+      <div class="cn">Frequentis — Remote Digital Tower Videos</div>
+      <div class="cd">Frequentis YouTube channel: product demonstrations, operational walkthroughs, and case studies for their remote and digital tower solutions.</div>
+      <div class="cl"><span class="bl bl-vid">▶ Search YouTube</span></div>
+    </a>
+
+    <a class="card" href="https://www.youtube.com/results?search_query=Saab+r-TWR+remote+tower+operations+ATC" target="_blank" data-s="Saab r-TWR remote tower video Sweden first certified operational YouTube">
+      <div class="ct"><div class="ci ci-vid">▶️</div><div class="bgs"><span class="b b-vid">YouTube</span><span class="b b-ind">Saab</span></div></div>
+      <div class="cn">Saab r-TWR — Remote Tower Videos</div>
+      <div class="cd">Saab r-TWR system videos, including the world's first certified operational remote tower in Sweden. Demonstrations and controller perspectives.</div>
+      <div class="cl"><span class="bl bl-vid">▶ Search YouTube</span></div>
+    </a>
+
+    <a class="card" href="https://www.youtube.com/results?search_query=Avinor+digital+tower+remote+Norway+ATC" target="_blank" data-s="Avinor Norway digital tower remote video operational multiple airports YouTube">
+      <div class="ct"><div class="ci ci-vid">▶️</div><div class="bgs"><span class="b b-vid">YouTube</span><span class="b b-ind">Avinor</span></div></div>
+      <div class="cn">Avinor — Digital Tower Norway Videos</div>
+      <div class="cd">Avinor videos on the Norwegian remote/digital tower programme. Operational footage from multiple Norwegian airports and Remote Tower Centres.</div>
+      <div class="cl"><span class="bl bl-vid">▶ Search YouTube</span></div>
+    </a>
+
+    <a class="card" href="https://www.youtube.com/results?search_query=DFS+remote+tower+center+Leipzig+Erfurt+ATC" target="_blank" data-s="DFS Germany Leipzig remote tower center Erfurt operations video YouTube">
+      <div class="ct"><div class="ci ci-vid">▶️</div><div class="bgs"><span class="b b-vid">YouTube</span><span class="b b-ind">DFS</span></div></div>
+      <div class="cn">DFS — Remote Tower Center Leipzig</div>
+      <div class="cd">DFS videos on the Remote Tower Center in Leipzig. Panoramic camera views, controller workstation demonstrations and operational footage from Erfurt-Weimar.</div>
+      <div class="cl"><span class="bl bl-vid">▶ Search YouTube</span></div>
+    </a>
+
+    <a class="card" href="https://www.youtube.com/results?search_query=SESAR+remote+digital+tower+ATC+Europe" target="_blank" data-s="SESAR remote tower video Europe research validation deployment YouTube">
+      <div class="ct"><div class="ci ci-vid">▶️</div><div class="bgs"><span class="b b-vid">YouTube</span><span class="b b-std">SESAR</span></div></div>
+      <div class="cn">SESAR — Remote Tower Research &amp; Validation</div>
+      <div class="cd">SESAR JU videos on remote tower research, validation, and deployment across Europe. Demonstrations from multiple ANSPs and validation results.</div>
+      <div class="cl"><span class="bl bl-vid">▶ Search YouTube</span></div>
+    </a>
+
+  </div>
+</section>
+
+
+<!-- ══════ SEARCH ══════ -->
+<!-- ══════ COMPARATIVO ══════ -->
+<section id="sec-comp" class="sec">
+  <div class="sec-hd">
+    <h2>📊 Comparativo Europeu</h2>
+    <small>Mapa interactivo · Tabela comparativa · Cronologia</small>
+  </div>
+
+  <!-- ── MAP ── -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <div class="info-card" style="margin-bottom:20px;">
+    <h3 style="margin-bottom:12px;">🗺️ Mapa — Implementações Europeias</h3>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;font-family:var(--fm);font-size:9.5px;">
+      <span style="display:flex;align-items:center;gap:5px;color:var(--text-dim);"><span style="width:10px;height:10px;border-radius:50%;background:#0a7a56;display:inline-block;border:2px solid #fff;box-shadow:0 0 0 1.5px #0a7a56;"></span>Em operação</span>
+      <span style="display:flex;align-items:center;gap:5px;color:var(--text-dim);"><span style="width:10px;height:10px;border-radius:50%;background:#2563eb;display:inline-block;border:2px solid #fff;box-shadow:0 0 0 1.5px #2563eb;"></span>Operacional</span>
+      <span style="display:flex;align-items:center;gap:5px;color:var(--text-dim);"><span style="width:10px;height:10px;border-radius:50%;background:#b45309;display:inline-block;border:2px solid #fff;box-shadow:0 0 0 1.5px #b45309;"></span>Em desenvolvimento</span>
+    </div>
+    <div id="rtmap" style="height:min(420px,55vw);min-height:280px;border-radius:8px;border:1.5px solid var(--border);overflow:hidden;"></div>
+    <div style="margin-top:8px;font-family:var(--fm);font-size:9px;color:var(--text-dim);">Clica num pin para ver detalhes · Scroll para zoom · Arrasta para mover</div>
+  </div>
+
+  <script>
+  (function() {
+    function initMap() {
+      if (!window.L || document.getElementById('rtmap')._leaflet_id) return;
+      var map = L.map('rtmap', { zoomControl: true, scrollWheelZoom: false, tap: true })
+        .setView([54, 12], 4);
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '© OpenStreetMap © CartoDB', maxZoom: 18
+      }).addTo(map);
+
+      function mkIcon(color, size) {
+        size = size || 14;
+        return L.divIcon({
+          className: '',
+          html: '<div style="width:'+size+'px;height:'+size+'px;border-radius:50%;background:'+color+';border:2.5px solid #fff;box-shadow:0 1px 6px rgba(0,0,0,.3);"></div>',
+          iconSize: [size, size], iconAnchor: [size/2, size/2]
+        });
+      }
+
+      var cases = [
+        { lat: 62.5,  lng: 17.3,  color: '#0a7a56', name: '🇸🇪 LFV — Suécia',
+          desc: '<b>Live desde 2015</b><br>1.º RTC certificado ICAO. Controla múltiplos aeroportos a partir de Arlanda.<br><b>Sistema:</b> Saab r-TWR<br><b>Aeroportos:</b> 5+',
+          url: 'https://www.lfv.se/' },
+        { lat: 65.4,  lng: 13.5,  color: '#0a7a56', name: '🇳🇴 Avinor — Noruega',
+          desc: '<b>Live — 15+ aeroportos</b><br>Maior RTC do mundo. Aeroportos regionais noruegueses.<br><b>Sistemas:</b> Saab r-TWR, Frequentis, Indra',
+          url: 'https://om.avinor.no/' },
+        { lat: 51.5,  lng: -0.1,  color: '#0a7a56', name: '🇬🇧 NATS — Reino Unido',
+          desc: '<b>Live desde 2022</b><br>1.º tower digital num hub internacional. London City + Southampton.<br><b>Sistema:</b> Frequentis + Searidge · 4K + IA',
+          url: 'https://www.nats.aero/our-solutions/digital-towers/' },
+        { lat: 51.4,  lng: 12.4,  color: '#0a7a56', name: '🇩🇪 DFS — Alemanha',
+          desc: '<b>Live desde 2022</b><br>RTC Leipzig controla Erfurt-Weimar remotamente.<br><b>Sistema:</b> Frequentis',
+          url: 'https://www.dfs.de/homepage/de/unternehmen/standorte/' },
+        { lat: 53.3,  lng: -6.3,  color: '#2563eb', name: '🇮🇪 IAA — Irlanda',
+          desc: '<b>Operacional</b><br>Pioneira em MRTO — 1 controlador / múltiplos aeroportos.<br><b>Sistema:</b> Saab r-TWR',
+          url: 'https://www.iaa.ie' },
+        { lat: 47.5,  lng: 19.0,  color: '#2563eb', name: '🇭🇺 HungaroControl — Hungria',
+          desc: '<b>Operacional desde 2022</b><br>1.º RTC na Europa Central-Este. Budapest controla Győr-Pér.<br><b>Sistema:</b> Frequentis + Indra',
+          url: 'https://en.hungarocontrol.hu/' },
+        { lat: 45.67, lng: 25.53, color: '#2563eb', name: '🇷🇴 ROMATSA — Roménia',
+          desc: '<b>Operacional — Brașov-Ghimbav</b><br>1.º aeroporto na Europa C-E construído de raiz com torre remota. Controlado a partir do centro ROMATSA em Arad.<br><b>Sistema:</b> Saab r-TWR',
+          url: 'https://www.romatsa.ro/' },
+        { lat: 50.47, lng: 4.87,  color: '#b45309', name: '🇧🇪 skeyes — Bélgica',
+          desc: '<b>Em desenvolvimento · Target fim 2026</b><br>RTC DiTo em Namur irá controlar Charleroi e Liège. Test centre já operacional (Mar 2024).<br><b>Sistema:</b> Saab r-TWR',
+          url: 'https://www.eurocontrol.int/article/remote-towers-skeyes-dito-project' },
+        { lat: 62.0,  lng: 25.5,  color: '#b45309', name: '🇫🇮 Fintraffic — Finlândia',
+          desc: '<b>Em desenvolvimento · Target 2025–2027</b><br>Projecto MROT para até 7 aeroportos regionais (Ivalo, Kittilä, Turku, Oulu…). Em fase de concurso.<br><b>Sistema:</b> TBD',
+          url: 'https://www.fintraffic.fi/' },
+        { lat: 48.2,  lng: 16.4,  color: '#b45309', name: '🇦🇹 Austro Control — Áustria',
+          desc: '<b>Trial / Desenvolvimento</b><br>Em desenvolvimento para aerodromes regionais austríacos.<br><b>Sistema:</b> Frequentis',
+          url: 'https://www.austrocontrol.at' },
+        { lat: 32.65, lng: -16.9, color: '#b45309', name: '🇵🇹 NAV Portugal — Funchal',
+          desc: '<b>CONOPS em desenvolvimento · Target 2030</b><br>RTC no Funchal: TWR LPMA + TWR LPPS virtuais, APP físico co-localizado.<br><b>Sistema:</b> TBD &nbsp;·&nbsp; GOPLIS',
+          url: 'https://www.nav.pt', pulse: true }
+      ];
+
+      cases.forEach(function(c) {
+        var icon = mkIcon(c.color, c.pulse ? 16 : 14);
+        var popup = '<div style="font-family:sans-serif;min-width:200px;max-width:240px;">'
+          + '<div style="font-size:13px;font-weight:700;color:#1a3867;margin-bottom:5px;">' + c.name + '</div>'
+          + '<div style="font-size:11.5px;color:#4d6180;line-height:1.5;">' + c.desc + '</div>'
+          + '<a href="' + c.url + '" target="_blank" style="display:inline-block;margin-top:8px;font-size:10px;font-family:monospace;color:#2563eb;font-weight:700;">↗ Ver site</a>'
+          + '</div>';
+        L.marker([c.lat, c.lng], {icon: icon})
+          .addTo(map)
+          .bindPopup(popup, {maxWidth: 260});
+      });
+    }
+
+    // init when section becomes visible
+    var observer = new MutationObserver(function() {
+      var el = document.getElementById('sec-comp');
+      if (el && el.classList.contains('active')) { initMap(); }
+    });
+    observer.observe(document.body, { subtree: true, attributes: true, attributeFilter: ['class'] });
+    // also try on load
+    window.addEventListener('load', function() {
+      var el = document.getElementById('sec-comp');
+      if (el && el.classList.contains('active')) initMap();
+    });
+  })();
+  </script>
+
+  <!-- ── TABLE ── -->
+  <div class="info-card" style="margin-bottom:20px;overflow-x:auto;">
+    <h3 style="margin-bottom:14px;">Tabela Comparativa — Casos Europeus</h3>
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>País / ANSP</th>
+          <th>Estado</th>
+          <th>Desde</th>
+          <th>Fornecedor(es)</th>
+          <th>Nº Aeroportos</th>
+          <th>RTC Centralizado</th>
+          <th>Multi-TWR</th>
+          <th>APP Remoto</th>
+          <th>Modelo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="ct-flag">🇸🇪</span><a class="ct-country" href="https://www.lfv.se/" target="_blank"><div class="ct-country">LFV — Suécia ↗</div></a><div class="ct-ansp">Luftfartsverket</div></td>
+          <td><span class="ct-badge ct-live status-clickable" onclick="openStatusModal('lfv')" title="Clica para detalhes">Live ↗</span></td>
+          <td><b>2015</b></td>
+          <td><div class="ct-vendor"><a class="ct-v" href="https://www.saab.com/products/r-twr" target="_blank">Saab r-TWR ↗</a></div></td>
+          <td style="text-align:center;font-weight:700;">5+</td>
+          <td style="text-align:center;" class="ct-yes">✓ Arlanda</td>
+          <td style="text-align:center;" class="ct-yes">✓</td>
+          <td style="text-align:center;" class="ct-no">—</td>
+          <td>RTC multi-aeroporto</td>
+        </tr>
+        <tr>
+          <td><span class="ct-flag">🇳🇴</span><a class="ct-country" href="https://om.avinor.no/" target="_blank"><div class="ct-country">Avinor — Noruega ↗</div></a><div class="ct-ansp">Avinor AS</div></td>
+          <td><span class="ct-badge ct-live status-clickable" onclick="openStatusModal('avinor')" title="Clica para detalhes">Live ↗</span></td>
+          <td><b>2019</b></td>
+          <td><div class="ct-vendor"><a class="ct-v" href="https://www.saab.com/products/r-twr" target="_blank">Saab r-TWR ↗</a><a class="ct-v" href="https://www.frequentis.com/en/air-traffic-management/focus-areas/remote-digital-tower" target="_blank">Frequentis ↗</a><a class="ct-v" href="https://airtraffic.indragroup.com/en/blog/how-the-worlds-largest-remote-digital-tower-centre-operates" target="_blank">Indra ↗</a></div></td>
+          <td style="text-align:center;font-weight:700;">15+</td>
+          <td style="text-align:center;" class="ct-yes">✓ Bodø / Røros</td>
+          <td style="text-align:center;" class="ct-yes">✓</td>
+          <td style="text-align:center;" class="ct-no">—</td>
+          <td>Maior RTC do mundo</td>
+        </tr>
+        <tr>
+          <td><span class="ct-flag">🇬🇧</span><a class="ct-country" href="https://www.nats.aero/our-solutions/digital-towers/" target="_blank"><div class="ct-country">NATS — Reino Unido ↗</div></a><div class="ct-ansp">NATS</div></td>
+          <td><span class="ct-badge ct-live">Live</span></td>
+          <td><b>2022</b></td>
+          <td><div class="ct-vendor"><a class="ct-v" href="https://www.frequentis.com/en/air-traffic-management/focus-areas/remote-digital-tower" target="_blank">Frequentis ↗</a><a class="ct-v" href="https://searidgetech.com/digital-apron-control-tower/digital-tower/" target="_blank">Searidge ↗</a></div></td>
+          <td style="text-align:center;font-weight:700;">2</td>
+          <td style="text-align:center;" class="ct-yes">✓ Swanwick</td>
+          <td style="text-align:center;" class="ct-no">—</td>
+          <td style="text-align:center;" class="ct-no">—</td>
+          <td>1.º hub internacional</td>
+        </tr>
+        <tr>
+          <td><span class="ct-flag">🇩🇪</span><a class="ct-country" href="https://www.dfs.de/homepage/de/unternehmen/standorte/" target="_blank"><div class="ct-country">DFS — Alemanha ↗</div></a><div class="ct-ansp">DFS Deutsche Flugsicherung</div></td>
+          <td><span class="ct-badge ct-live">Live</span></td>
+          <td><b>2022</b></td>
+          <td><div class="ct-vendor"><a class="ct-v" href="https://www.frequentis.com/en/air-traffic-management/focus-areas/remote-digital-tower" target="_blank">Frequentis ↗</a></div></td>
+          <td style="text-align:center;font-weight:700;">2</td>
+          <td style="text-align:center;" class="ct-yes">✓ Leipzig</td>
+          <td style="text-align:center;" class="ct-no">—</td>
+          <td style="text-align:center;" class="ct-no">—</td>
+          <td>RTC dedicado</td>
+        </tr>
+        <tr>
+          <td><span class="ct-flag">🇮🇪</span><a class="ct-country" href="https://www.iaa.ie" target="_blank"><div class="ct-country">IAA — Irlanda ↗</div></a><div class="ct-ansp">Irish Aviation Authority</div></td>
+          <td><span class="ct-badge ct-op status-clickable" onclick="openStatusModal('iaa')" title="Clica">Operational ↗</span></td>
+          <td><b>2019</b></td>
+          <td><div class="ct-vendor"><a class="ct-v" href="https://www.saab.com/products/r-twr" target="_blank">Saab r-TWR ↗</a></div></td>
+          <td style="text-align:center;font-weight:700;">3+</td>
+          <td style="text-align:center;" class="ct-yes">✓</td>
+          <td style="text-align:center;" class="ct-yes">✓ MRTO</td>
+          <td style="text-align:center;" class="ct-no">—</td>
+          <td>MRTO — 1 ATCO / múltiplos</td>
+        </tr>
+        <tr>
+          <td><span class="ct-flag">🇭🇺</span><a class="ct-country" href="https://en.hungarocontrol.hu/" target="_blank"><div class="ct-country">HungaroControl — Hungria ↗</div></a><div class="ct-ansp">HungaroControl</div></td>
+          <td><span class="ct-badge ct-op status-clickable" onclick="openStatusModal('hc')" title="Clica">Operational ↗</span></td>
+          <td><b>2022</b></td>
+          <td><div class="ct-vendor"><a class="ct-v" href="https://www.frequentis.com/en/air-traffic-management/focus-areas/remote-digital-tower" target="_blank">Frequentis ↗</a><a class="ct-v" href="https://airtraffic.indragroup.com/en/blog/how-the-worlds-largest-remote-digital-tower-centre-operates" target="_blank">Indra ↗</a></div></td>
+          <td style="text-align:center;font-weight:700;">1</td>
+          <td style="text-align:center;" class="ct-yes">✓ Budapeste</td>
+          <td style="text-align:center;" class="ct-no">—</td>
+          <td style="text-align:center;" class="ct-no">—</td>
+          <td>1.º Europa Central-Este</td>
+        </tr>
+        <tr>
+          <td><span class="ct-flag">🇷🇴</span><a class="ct-country" href="https://www.romatsa.ro/" target="_blank"><div class="ct-country">ROMATSA — Roménia ↗</div></a><div class="ct-ansp">ROMATSA</div></td>
+          <td><span class="ct-badge ct-op status-clickable" onclick="openStatusModal('romatsa')" title="Clica">Operational ↗</span></td>
+          <td><b>2024</b></td>
+          <td><div class="ct-vendor"><a class="ct-v" href="https://www.saab.com/products/r-twr" target="_blank">Saab r-TWR ↗</a></div></td>
+          <td style="text-align:center;font-weight:700;">1</td>
+          <td style="text-align:center;" class="ct-yes">✓ Arad</td>
+          <td style="text-align:center;" class="ct-no">—</td>
+          <td style="text-align:center;" class="ct-no">—</td>
+          <td>Novo aeroporto de raiz</td>
+        </tr>
+        <tr>
+          <td><span class="ct-flag">🇧🇪</span><a class="ct-country" href="https://www.eurocontrol.int/article/remote-towers-skeyes-dito-project" target="_blank"><div class="ct-country">skeyes — Bélgica ↗</div></a><div class="ct-ansp">skeyes / SOWAER</div></td>
+          <td><span class="ct-badge ct-trial status-clickable" onclick="openStatusModal('skeyes')" title="Clica">Dev. 2026 ↗</span></td>
+          <td><b>≤ 2026</b></td>
+          <td><div class="ct-vendor"><a class="ct-v" href="https://www.saab.com/products/r-twr" target="_blank">Saab r-TWR ↗</a></div></td>
+          <td style="text-align:center;font-weight:700;">2</td>
+          <td style="text-align:center;" class="ct-yes">✓ Namur</td>
+          <td style="text-align:center;" class="ct-yes">✓</td>
+          <td style="text-align:center;" class="ct-no">—</td>
+          <td>RTC DiTo — Charleroi + Liège</td>
+        </tr>
+        <tr>
+          <td><span class="ct-flag">🇫🇮</span><a class="ct-country" href="https://www.fintraffic.fi/" target="_blank"><div class="ct-country">Fintraffic — Finlândia ↗</div></a><div class="ct-ansp">Fintraffic ANS</div></td>
+          <td><span class="ct-badge ct-dev status-clickable" onclick="openStatusModal('fintraffic')" title="Clica">Dev. 2025–27 ↗</span></td>
+          <td><b>TBD</b></td>
+          <td><div class="ct-vendor"><span class="ct-v">TBD</span></div></td>
+          <td style="text-align:center;font-weight:700;">7 prev.</td>
+          <td style="text-align:center;" class="ct-yes">✓ Helsinki</td>
+          <td style="text-align:center;" class="ct-yes">✓ MROT</td>
+          <td style="text-align:center;" class="ct-no">—</td>
+          <td>MROT — em concurso</td>
+        </tr>
+        <tr>
+          <td><span class="ct-flag">🇦🇹</span><a class="ct-country" href="https://www.austrocontrol.at" target="_blank"><div class="ct-country">Austro Control — Áustria ↗</div></a><div class="ct-ansp">Austro Control</div></td>
+          <td><span class="ct-badge ct-trial status-clickable" onclick="openStatusModal('austro')" title="Clica">Trial ↗</span></td>
+          <td><b>—</b></td>
+          <td><div class="ct-vendor"><a class="ct-v" href="https://www.frequentis.com/en/air-traffic-management/focus-areas/remote-digital-tower" target="_blank">Frequentis ↗</a><a class="ct-v" href="https://triac.aero/portfolio/" target="_blank">TRIAC ↗</a></div></td>
+          <td style="text-align:center;font-weight:700;">TBD</td>
+          <td style="text-align:center;" class="ct-no">TBD</td>
+          <td style="text-align:center;" class="ct-no">—</td>
+          <td style="text-align:center;" class="ct-no">—</td>
+          <td>Em desenvolvimento</td>
+        </tr>
+        <tr class="nav-row">
+          <td><span class="ct-flag">🇵🇹</span><a class="ct-country" href="https://www.nav.pt" target="_blank"><div class="ct-country">NAV Portugal ↗</div></a><div class="ct-ansp">NAV Portugal E.P.E. · GOPLIS</div></td>
+          <td><span class="ct-badge ct-dev status-clickable" onclick="openStatusModal('nav')" title="Clica">CONOPS Dev. ↗</span></td>
+          <td><b>≤ 2030</b></td>
+          <td><div class="ct-vendor"><span class="ct-v">TBD</span></div></td>
+          <td style="text-align:center;font-weight:700;">2</td>
+          <td style="text-align:center;" class="ct-yes">✓ Funchal</td>
+          <td style="text-align:center;" class="ct-yes">✓ LPMA+LPPS</td>
+          <td style="text-align:center;" class="ct-special">APP físico co-loc.</td>
+          <td>2 TWR virtuais + APP físico</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="margin-top:10px;display:flex;gap:16px;flex-wrap:wrap;font-family:var(--fm);font-size:9.5px;color:var(--text-dim);">
+      <span>✓ = sim &nbsp;·&nbsp; — = não / não aplicável &nbsp;·&nbsp; TBD = a definir</span>
+      <span style="color:var(--amber);font-weight:700;">★ Linha NAV Portugal destacada</span>
+    </div>
+    <div style="margin-top:10px;padding:10px 14px;background:var(--purple-bg);border:1px solid var(--purple-bd);border-radius:7px;font-size:11px;color:var(--text-muted);font-family:var(--fb);">
+      <b style="color:var(--purple);">🇮🇹 Itália — ENAV:</b> Realizou experiências SESAR (projecto RACOON) em que Malpensa controlou remotamente mais de 100 movimentos em Linate. Tem planos de torres remotas para Brindisi e Pádua, mas sem operação certificada por enquanto. A incluir na tabela quando operacional.
+    </div>
+  </div>
+
+  <!-- ── HIGHLIGHT BOXES ── -->
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:20px;">
+    <div style="background:var(--green-bg);border:1.5px solid var(--green-bd);border-radius:9px;padding:13px 16px;">
+      <div style="font-family:var(--fm);font-size:9px;color:var(--green);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px;">Pioneiro mundial</div>
+      <div style="font-family:var(--fh);font-size:22px;font-weight:800;color:var(--navy);">🇸🇪 2015</div>
+      <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">LFV Suécia — primeiro RTC certificado pelo ICAO (Örnsköldsvik)</div>
+    </div>
+    <div style="background:var(--blue-bg);border:1.5px solid var(--blue-bd);border-radius:9px;padding:13px 16px;">
+      <div style="font-family:var(--fm);font-size:9px;color:var(--blue);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px;">Maior implementação</div>
+      <div style="font-family:var(--fh);font-size:22px;font-weight:800;color:var(--navy);">🇳🇴 15+ aerop.</div>
+      <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Avinor Noruega — maior rede de torres remotas do mundo</div>
+    </div>
+    <div style="background:var(--amber-bg);border:1.5px solid var(--amber-bd);border-radius:9px;padding:13px 16px;">
+      <div style="font-family:var(--fm);font-size:9px;color:var(--amber);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px;">Caso único</div>
+      <div style="font-family:var(--fh);font-size:22px;font-weight:800;color:var(--navy);">🇵🇹 2 ilhas</div>
+      <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">NAV Portugal — multi-TWR insular + APP físico co-localizado</div>
+    </div>
+  </div>
+
+  <!-- ── TIMELINE ── -->
+  <div class="info-card">
+    <h3 style="margin-bottom:20px;">🕐 Cronologia das Implementações Europeias</h3>
+    <div class="timeline">
+
+      <div class="tl-item tl-left">
+        <div class="tl-content">
+          <div class="tl-year">2015</div>
+          <div class="tl-title"><span class="tl-flag">🇸🇪</span>LFV — Örnsköldsvik, Suécia</div>
+          <div class="tl-desc">Primeira torre remota certificada pelo ICAO no mundo. LFV controla o aeroporto de Örnsköldsvik a partir de Sundsvall com o sistema Saab r-TWR. Demonstra viabilidade operacional do conceito.</div>
+          <div class="tl-tags"><span class="tl-tag tl-tag-green">1.º do mundo</span><span class="tl-tag">Saab r-TWR</span><span class="tl-tag">ICAO certificado</span></div>
+          <div class="tl-docs">
+            <a class="tl-doc-web" href="https://lfv.se/en/about-us/this-is-lfv/lfv-holding-and-subsidiaries/lfv-aviation-consulting/portfolio/remote-tower" target="_blank">↗ LFV Remote Towers</a>
+            <a class="tl-doc-web" href="https://www.saab.com/products/r-twr" target="_blank">↗ Saab r-TWR</a>
+          </div>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner tl-dot-live"></div></div>
+        <div style="width:calc(50% - 28px);"></div>
+      </div>
+
+      <div class="tl-item">
+        <div style="width:calc(50% - 28px);"></div>
+        <div class="tl-dot"><div class="tl-dot-inner tl-dot-live"></div></div>
+        <div class="tl-content">
+          <div class="tl-year">2016–2018</div>
+          <div class="tl-title"><span class="tl-flag">🇸🇪</span>LFV — Expansão para RTC Arlanda</div>
+          <div class="tl-desc">LFV expande o modelo para múltiplos aeroportos suecos geridos a partir de um Remote Tower Centre em Estocolmo Arlanda. Primeiro modelo multi-aeroporto em operação real.</div>
+          <div class="tl-tags"><span class="tl-tag tl-tag-green">Multi-aeroporto</span><span class="tl-tag">RTC</span><span class="tl-tag">Saab r-TWR</span></div>
+          <div class="tl-docs">
+            <a class="tl-doc-web" href="https://www.lfv.se/en/services/airport-services/remote-tower-services" target="_blank">↗ LFV Remote Tower Services</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item tl-left">
+        <div class="tl-content">
+          <div class="tl-year">2019</div>
+          <div class="tl-title"><span class="tl-flag">🇳🇴</span>Avinor — Início deployment Noruega</div>
+          <div class="tl-desc">Avinor inicia a implementação em larga escala de torres remotas em aeroportos regionais noruegueses. Usa sistemas Saab r-TWR e Frequentis. Cresce rapidamente para o maior RTC do mundo.</div>
+          <div class="tl-tags"><span class="tl-tag tl-tag-blue">Saab r-TWR</span><span class="tl-tag tl-tag-blue">Frequentis</span><span class="tl-tag">15+ aeroportos</span></div>
+          <div class="tl-docs">
+            <a class="tl-doc-web" href="https://om.avinor.no/en/aviation-safety/digital-towers/" target="_blank">↗ Avinor Digital Towers</a>
+            <a class="tl-doc-web" href="https://www.kongsberg.com/news/stories/2025/5/remote-towers-a-new-standard-for-air-traffic-management/" target="_blank">↗ RTC Bodø</a>
+          </div>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner tl-dot-live"></div></div>
+        <div style="width:calc(50% - 28px);"></div>
+      </div>
+
+      <div class="tl-item">
+        <div style="width:calc(50% - 28px);"></div>
+        <div class="tl-dot"><div class="tl-dot-inner tl-dot-live"></div></div>
+        <div class="tl-content">
+          <div class="tl-year">2019</div>
+          <div class="tl-title"><span class="tl-flag">🇮🇪</span>IAA — Irlanda, MRTO</div>
+          <div class="tl-desc">Irish Aviation Authority torna-se pioneira em Multiple Remote Tower Operations (MRTO) — um único controlador gere vários aeroportos em simultâneo. Pesquisa de referência sobre factores humanos.</div>
+          <div class="tl-tags"><span class="tl-tag tl-tag-blue">MRTO</span><span class="tl-tag">Saab r-TWR</span><span class="tl-tag">SESAR</span></div>
+          <div class="tl-docs">
+            <a class="tl-doc-page" href="https://www.sciencedirect.com/science/article/abs/pii/S0965856417303397" target="_blank">📄 MRTO Research (ScienceDirect)</a>
+            <a class="tl-doc-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/IAA%202019MRTOFinalManuscript.docx" target="_blank">📂 IAA Manuscript (Local)</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item tl-left">
+        <div class="tl-content">
+          <div class="tl-year">2019</div>
+          <div class="tl-title"><span class="tl-flag">🇪🇺</span>EASA — GM Issue 2 + ED Decision</div>
+          <div class="tl-desc">EASA publica a Guidance Material Issue 2 e a ED Decision 2019-004-R, estabelecendo o quadro regulatório europeu para operações de torre remota. Documento base para certificação dos ANSPs.</div>
+          <div class="tl-tags"><span class="tl-tag">GM Issue 2</span><span class="tl-tag">ED 2019-004-R</span><span class="tl-tag">Quadro regulatório</span></div>
+          <div class="tl-docs">
+            <a class="tl-doc-pdf" href="https://www.easa.europa.eu/en/downloads/71515/en" target="_blank">📥 GM Issue 2 PDF</a>
+            <a class="tl-doc-page" href="https://www.easa.europa.eu/en/document-library/agency-decisions/ed-decision-2019004r" target="_blank">🔗 ED 2019-004-R</a>
+            <a class="tl-doc-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/Annex%20I%20%E2%80%94GM%20on%20remote%20aerodrome%20air%20traffic%20services%20%E2%80%94Issue%202.pdf" target="_blank">📂 Local (Issue 2)</a>
+          </div>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner tl-dot-op"></div></div>
+        <div style="width:calc(50% - 28px);"></div>
+      </div>
+
+      <div class="tl-item">
+        <div style="width:calc(50% - 28px);"></div>
+        <div class="tl-dot"><div class="tl-dot-inner tl-dot-live"></div></div>
+        <div class="tl-content">
+          <div class="tl-year">2022</div>
+          <div class="tl-title"><span class="tl-flag">🇬🇧</span>NATS — London City Airport</div>
+          <div class="tl-desc">Primeira torre digital num hub internacional de grande dimensão. NATS opera London City Airport com câmaras 4K e IA (Frequentis + Searidge). Marco histórico — demonstra viabilidade em ambiente de alta densidade.</div>
+          <div class="tl-tags"><span class="tl-tag tl-tag-green">Hub internacional</span><span class="tl-tag">4K + IA</span><span class="tl-tag">Frequentis</span><span class="tl-tag">Searidge</span></div>
+          <div class="tl-docs">
+            <a class="tl-doc-web" href="https://www.londoncityairport.com/media-centre/press-releases/one-year-on-london-citys-digital-air-traffic-control-tower" target="_blank">↗ London City — 1 Year On</a>
+            <a class="tl-doc-vid" href="https://www.youtube.com/watch?v=MsoxL6tMG_I" target="_blank">▶ 4K Video + AI</a>
+            <a class="tl-doc-web" href="https://www.nats.aero/our-solutions/digital-towers/" target="_blank">↗ NATS Digital Tower</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item tl-left">
+        <div class="tl-content">
+          <div class="tl-year">2022</div>
+          <div class="tl-title"><span class="tl-flag">🇩🇪</span>DFS — RTC Leipzig / Erfurt-Weimar</div>
+          <div class="tl-desc">DFS activa o Remote Tower Centre em Leipzig. Controla Erfurt-Weimar remotamente com sistema Frequentis e câmaras panorâmicas. Primeiro RTC dedicado da Alemanha.</div>
+          <div class="tl-tags"><span class="tl-tag tl-tag-blue">RTC dedicado</span><span class="tl-tag">Frequentis</span><span class="tl-tag">Erfurt-Weimar</span></div>
+          <div class="tl-docs">
+            <a class="tl-doc-pdf" href="https://eu-lac-app.eu/public/uploads/DFS_Projekt_RTC_20231024_eng.pdf" target="_blank">📥 DFS Leipzig PDF</a>
+            <a class="tl-doc-page" href="https://www.dfs.de/homepage/en/media/press/2022/28-04-2022-expansion-of-the-dfs-remote-tower-control-centre/" target="_blank">🔗 Press Release</a>
+            <a class="tl-doc-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/DSF%20Remote%20Tower%20Center%20Leipzig.pdf" target="_blank">📂 Local (Leipzig)</a>
+          </div>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner tl-dot-live"></div></div>
+        <div style="width:calc(50% - 28px);"></div>
+      </div>
+
+      <div class="tl-item">
+        <div style="width:calc(50% - 28px);"></div>
+        <div class="tl-dot"><div class="tl-dot-inner tl-dot-op"></div></div>
+        <div class="tl-content">
+          <div class="tl-year">2022</div>
+          <div class="tl-title"><span class="tl-flag">🇭🇺</span>HungaroControl — Budapeste</div>
+          <div class="tl-desc">Primeiro RTC operacional na Europa Central e de Leste. HungaroControl controla Győr-Pér a partir de Budapeste com sistema Frequentis/Indra. Considerado um dos mais avançados do mundo.</div>
+          <div class="tl-tags"><span class="tl-tag">1.º Europa Central-Este</span><span class="tl-tag">Frequentis</span><span class="tl-tag">Indra</span></div>
+          <div class="tl-docs">
+            <a class="tl-doc-web" href="https://airtraffic.indragroup.com/en/blog/the-worlds-most-advanced-remote-digital-tower-is-in" target="_blank">↗ Indra — Budapest RTC</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item tl-left">
+        <div class="tl-content">
+          <div class="tl-year">2023</div>
+          <div class="tl-title"><span class="tl-flag">🇪🇺</span>EASA — GM Issue 3 + ED Decision</div>
+          <div class="tl-desc">EASA publica a versão mais recente da Guidance Material (Issue 3) e a ED Decision 2023-005-R. Incorpora lições aprendidas das implementações operacionais. Documento regulatório de referência actual.</div>
+          <div class="tl-tags"><span class="tl-tag">GM Issue 3</span><span class="tl-tag">ED 2023-005-R</span><span class="tl-tag">Baseline actual</span></div>
+          <div class="tl-docs">
+            <a class="tl-doc-pdf" href="https://www.easa.europa.eu/en/downloads/137788/en" target="_blank">📥 GM Issue 3 PDF</a>
+            <a class="tl-doc-page" href="https://www.easa.europa.eu/en/document-library/acceptable-means-of-compliance-and-guidance-material/gm-remote-tower-operations-1" target="_blank">🔗 EASA Library</a>
+            <a class="tl-doc-page" href="https://www.easa.europa.eu/en/document-library/agency-decisions/ed-decision-2023005r" target="_blank">🔗 ED 2023-005-R</a>
+            <a class="tl-doc-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/GM_on_remote_tower_operations_-_Issue_3.pdf" target="_blank">📂 Local (Issue 3)</a>
+          </div>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner tl-dot-op"></div></div>
+        <div style="width:calc(50% - 28px);"></div>
+      </div>
+
+      <div class="tl-item nav-item">
+        <div style="width:calc(50% - 28px);"></div>
+        <div class="tl-dot"><div class="tl-dot-inner tl-dot-nav"></div></div>
+        <div class="tl-content">
+          <div class="tl-year">≤ 2030</div>
+          <div class="tl-title"><span class="tl-flag">🇵🇹</span>NAV Portugal — Funchal RTC</div>
+          <div class="tl-desc">NAV Portugal entra em operação com Remote Tower Centre no Funchal: TWR Funchal e TWR Porto Santo virtualizadas, APP Madeira físico co-localizado. Primeiro RTC insular multi-aeroporto em Portugal.</div>
+          <div class="tl-tags"><span class="tl-tag tl-tag-amber">Em desenvolvimento</span><span class="tl-tag tl-tag-amber">GOPLIS</span><span class="tl-tag">LPMA + LPPS</span><span class="tl-tag">Target 2030</span></div>
+          <div class="tl-docs">
+            <a class="tl-doc-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/Conops%20TWRFUN%20com%20plano%20de%20implementa%C3%A7%C3%A3o_v1.1..docx" target="_blank">📂 CONOPS TWRFUN v1.1</a>
+            <a class="tl-doc-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/CONOPS%20PST%20remote%20TWR.docx" target="_blank">📂 CONOPS PST</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /timeline -->
+
+    <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;padding-top:12px;border-top:1px solid var(--border);font-family:var(--fm);font-size:9.5px;">
+      <span style="display:flex;align-items:center;gap:5px;color:var(--text-dim);"><span style="width:10px;height:10px;border-radius:50%;background:var(--green);display:inline-block;"></span> Em operação</span>
+      <span style="display:flex;align-items:center;gap:5px;color:var(--text-dim);"><span style="width:10px;height:10px;border-radius:50%;background:var(--blue);display:inline-block;"></span> Regulamentação / Operacional</span>
+      <span style="display:flex;align-items:center;gap:5px;color:var(--text-dim);"><span style="width:10px;height:10px;border-radius:50%;background:var(--amber);display:inline-block;"></span> NAV Portugal / Em desenvolvimento</span>
+    </div>
+  </div>
+
+</section><!-- /comp -->
+
+<section id="sec-search" class="sec">
+  <div class="sec-hd"><h2>Search Results</h2><small id="sss">Type in the search bar above</small></div>
+  <div class="grid" id="search-results-grid">
+    <div class="nr">[ Type at least 2 characters in the search bar to find documents, links, cases and videos ]</div>
+  </div>
+</section>
+
+<!-- ══════ NAV PORTUGAL ══════ -->
+<section id="sec-nav" class="sec">
+  <div class="sec-hd">
+    <h2>🇵🇹 NAV Portugal — Projecto Remote Tower</h2>
+    <small>GOPLIS · CONOPS TWRFUN v1.1 · Informação Interna</small>
+  </div>
+
+  <!-- STATUS BANNER -->
+  <div style="background:var(--navy);border-radius:10px;padding:16px 22px;display:flex;align-items:center;gap:18px;margin-bottom:16px;flex-wrap:wrap;">
+    <div style="flex:1;min-width:200px;">
+      <div style="font-family:var(--fm);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#93c5fd;margin-bottom:4px;">Estado actual</div>
+      <div style="font-family:var(--fh);font-size:18px;font-weight:800;color:#fff;line-height:1.2;">CONOPS em desenvolvimento</div>
+      <div style="font-family:var(--fb);font-size:12px;color:rgba(255,255,255,.55);margin-top:4px;">Fase 1 — Planeamento Detalhado · Entrada em serviço prevista até 2030</div>
+    </div>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;">
+      <div style="text-align:center;">
+        <div style="font-family:var(--fh);font-size:22px;font-weight:800;color:#60a5fa;">3</div>
+        <div style="font-family:var(--fm);font-size:9px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.07em;">CWPs</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-family:var(--fh);font-size:22px;font-weight:800;color:#34d399;">2</div>
+        <div style="font-family:var(--fm);font-size:9px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.07em;">Torres Virtuais</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-family:var(--fh);font-size:22px;font-weight:800;color:#fbbf24;">9</div>
+        <div style="font-family:var(--fm);font-size:9px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.07em;">Fases</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-family:var(--fh);font-size:22px;font-weight:800;color:#f87171;">2030</div>
+        <div style="font-family:var(--fm);font-size:9px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.07em;">Target</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-grid" style="margin-bottom:16px;">
+
+    <!-- CWPs -->
+    <div class="info-card">
+      <h3>⚙️ Configuração Operacional — 3 CWPs</h3>
+      <div style="font-size:11.5px;color:var(--text-muted);margin-bottom:12px;line-height:1.5;">
+        Centro de controlo único no Funchal (edifício NAV) com três posições de trabalho. As duas torres são virtualizadas; a aproximação mantém-se convencional por dependência do TOPSKY-ATC (COOPANS).
+      </div>
+      <div class="cwp-wrap">
+        <div class="cwp cwp-virtual">
+          <div class="cwp-num">1</div>
+          <div>
+            <div class="cwp-name">TWR Funchal (LPMA)</div>
+            <div class="cwp-detail">Câmaras remotas no Aeroporto da Madeira · 360° + zoom + IR</div>
+          </div>
+          <div class="cwp-badge">Virtual</div>
+        </div>
+        <div class="cwp cwp-virtual">
+          <div class="cwp-num">2</div>
+          <div>
+            <div class="cwp-name">TWR Porto Santo (LPPS)</div>
+            <div class="cwp-detail">Câmaras remotas no Aeroporto do Porto Santo</div>
+          </div>
+          <div class="cwp-badge">Virtual</div>
+        </div>
+        <div class="cwp cwp-physical">
+          <div class="cwp-num">3</div>
+          <div>
+            <div class="cwp-name">APP Madeira</div>
+            <div class="cwp-detail">Posição convencional · TOPSKY-ATC / COOPANS · TMA Madeira</div>
+          </div>
+          <div class="cwp-badge">Física</div>
+        </div>
+      </div>
+      <div style="margin-top:12px;padding:9px 12px;background:var(--blue-bg);border:1px solid var(--blue-bd);border-radius:7px;font-size:11px;color:var(--navy);">
+        📍 <b>Localização prevista:</b> Edifício NAV Portugal no Funchal — a confirmar
+      </div>
+    </div>
+
+    <!-- ÂMBITO -->
+    <div class="info-card">
+      <h3>📋 Âmbito e Serviços</h3>
+      <div style="display:flex;flex-direction:column;gap:7px;">
+        <div style="padding:9px 12px;background:var(--green-bg);border:1px solid var(--green-bd);border-radius:7px;">
+          <div style="font-family:var(--fm);font-size:9px;color:var(--green);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px;">Virtualizados</div>
+          <div style="font-size:11.5px;color:var(--text);line-height:1.5;">Controlo de aeródromo TWR em LPMA e LPPS. Controlador no Funchal gere ambas as torres com câmaras 360°, visão noturna e zoom ótico.</div>
+        </div>
+        <div style="padding:9px 12px;background:var(--blue-bg);border:1px solid var(--blue-bd);border-radius:7px;">
+          <div style="font-family:var(--fm);font-size:9px;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px;">Convencional</div>
+          <div style="font-size:11.5px;color:var(--text);line-height:1.5;">Controlo de aproximação APP para TMA Madeira. Não virtualizável — dependência do software TOPSKY-ATC do sistema COOPANS.</div>
+        </div>
+        <div style="padding:9px 12px;background:var(--bg);border:1px solid var(--border);border-radius:7px;">
+          <div style="font-family:var(--fm);font-size:9px;color:var(--text-dim);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px;">Coordenação</div>
+          <div style="font-size:11.5px;color:var(--text);line-height:1.5;">TWRSAN ↔ TWRFUN (inter-ilhas) · ACC Lisboa / CONLIS (IFR) · ANA/VINCI · ANAC (certificação)</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /nav-grid -->
+
+  <!-- ROADMAP -->
+  <div class="info-card" style="margin-bottom:16px;">
+    <h3>🗓️ Roadmap de Implementação — 9 Fases</h3>
+    <div class="phase-row">
+      <div class="phase ph-active phase-clickable" onclick="openPhaseModal('plan')" title="Clica para ver detalhes">
+        <div class="phase-n">Fase 1</div>
+        <div class="phase-period">M 0–2</div>
+        <div class="phase-title">Planeamento Detalhado</div>
+        <div style="font-family:var(--fm);font-size:8px;color:var(--amber);margin-top:3px;">clica ↗</div>
+      </div>
+      <div class="phase  phase-clickable" onclick="openPhaseModal('build')" title="Clica para ver detalhes">
+        <div class="phase-n">Fase 2</div>
+        <div class="phase-period">M 3–12</div>
+        <div class="phase-title">Construção &amp; Instalação</div>
+        <div style="font-family:var(--fm);font-size:8px;color:var(--amber);margin-top:3px;">clica ↗</div>
+      </div>
+      <div class="phase  phase-clickable" onclick="openPhaseModal('int')" title="Clica para ver detalhes">
+        <div class="phase-n">Fase 3</div>
+        <div class="phase-period">M 10–14</div>
+        <div class="phase-title">Integração de Sistemas</div>
+        <div style="font-family:var(--fm);font-size:8px;color:var(--amber);margin-top:3px;">clica ↗</div>
+      </div>
+      <div class="phase  phase-clickable" onclick="openPhaseModal('test')" title="Clica para ver detalhes">
+        <div class="phase-n">Fase 4</div>
+        <div class="phase-period">M 13–16</div>
+        <div class="phase-title">Testes Técnicos</div>
+        <div style="font-family:var(--fm);font-size:8px;color:var(--amber);margin-top:3px;">clica ↗</div>
+      </div>
+      <div class="phase  phase-clickable" onclick="openPhaseModal('sim')" title="Clica para ver detalhes">
+        <div class="phase-n">Fase 5</div>
+        <div class="phase-period">M 15–17</div>
+        <div class="phase-title">Simulações Operacionais</div>
+        <div style="font-family:var(--fm);font-size:8px;color:var(--amber);margin-top:3px;">clica ↗</div>
+      </div>
+      <div class="phase  phase-clickable" onclick="openPhaseModal('train')" title="Clica para ver detalhes">
+        <div class="phase-n">Fase 6</div>
+        <div class="phase-period">M 15–18</div>
+        <div class="phase-title">Formação de Pessoal</div>
+        <div style="font-family:var(--fm);font-size:8px;color:var(--amber);margin-top:3px;">clica ↗</div>
+      </div>
+      <div class="phase  phase-clickable" onclick="openPhaseModal('pilot')" title="Clica para ver detalhes">
+        <div class="phase-n">Fase 7</div>
+        <div class="phase-period">M 18–20</div>
+        <div class="phase-title">Operação Piloto</div>
+        <div style="font-family:var(--fm);font-size:8px;color:var(--amber);margin-top:3px;">clica ↗</div>
+      </div>
+      <div class="phase  phase-clickable" onclick="openPhaseModal('cert')" title="Clica para ver detalhes">
+        <div class="phase-n">Fase 8</div>
+        <div class="phase-period">M 20–22</div>
+        <div class="phase-title">Certificação ANAC</div>
+        <div style="font-family:var(--fm);font-size:8px;color:var(--amber);margin-top:3px;">clica ↗</div>
+      </div>
+      <div class="phase  phase-clickable" onclick="openPhaseModal('ops')" title="Clica para ver detalhes">
+        <div class="phase-n">Fase 9</div>
+        <div class="phase-period">M 23+</div>
+        <div class="phase-title">Entrada em Serviço Plena</div>
+        <div style="font-family:var(--fm);font-size:8px;color:var(--amber);margin-top:3px;">clica ↗</div>
+      </div>
+    </div>
+    </div>
+    <div style="margin-top:10px;display:flex;gap:12px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:5px;font-family:var(--fm);font-size:9px;color:var(--text-dim);">
+        <div style="width:12px;height:12px;background:var(--amber-bg);border:1px solid var(--amber-bd);border-radius:2px;"></div> Fase actual
+      </div>
+      <div style="display:flex;align-items:center;gap:5px;font-family:var(--fm);font-size:9px;color:var(--text-dim);">
+        <div style="width:12px;height:12px;background:var(--surface);border:1px solid var(--border);border-radius:2px;"></div> Fases seguintes
+      </div>
+      <div style="margin-left:auto;font-family:var(--fm);font-size:9px;color:var(--text-dim);">⟵ scroll horizontal se necessário</div>
+    </div>
+  </div>
+
+  <div class="nav-grid" style="margin-bottom:16px;">
+
+    <!-- KPIs OPERACIONAIS -->
+    <div class="info-card">
+      <h3>📊 Capacidade Declarada TMA Madeira (actual)</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:11.5px;">
+        <thead>
+          <tr style="background:var(--navy);">
+            <th style="padding:7px 9px;text-align:left;color:#fff;font-family:var(--fm);font-size:9px;font-weight:700;letter-spacing:.05em;">Período (local)</th>
+            <th style="padding:7px 9px;text-align:center;color:#fff;font-family:var(--fm);font-size:9px;font-weight:700;">Global TMA</th>
+            <th style="padding:7px 9px;text-align:center;color:#fff;font-family:var(--fm);font-size:9px;font-weight:700;">Chegadas</th>
+            <th style="padding:7px 9px;text-align:center;color:#fff;font-family:var(--fm);font-size:9px;font-weight:700;">Partidas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:var(--surface);">
+            <td style="padding:6px 9px;color:var(--text-muted);border-bottom:1px solid var(--border);">09:30–17:30</td>
+            <td style="padding:6px 9px;text-align:center;font-weight:700;color:var(--navy);border-bottom:1px solid var(--border);">16</td>
+            <td style="padding:6px 9px;text-align:center;color:var(--text-muted);border-bottom:1px solid var(--border);">8 máx</td>
+            <td style="padding:6px 9px;text-align:center;color:var(--text-muted);border-bottom:1px solid var(--border);">14 máx</td>
+          </tr>
+          <tr style="background:var(--bg);">
+            <td style="padding:6px 9px;color:var(--text-muted);border-bottom:1px solid var(--border);">08:00–09:30 / 17:30–18:30</td>
+            <td style="padding:6px 9px;text-align:center;font-weight:700;color:var(--navy);border-bottom:1px solid var(--border);">12</td>
+            <td style="padding:6px 9px;text-align:center;color:var(--text-muted);border-bottom:1px solid var(--border);">8 máx</td>
+            <td style="padding:6px 9px;text-align:center;color:var(--text-muted);border-bottom:1px solid var(--border);">12 máx</td>
+          </tr>
+          <tr style="background:var(--surface);">
+            <td style="padding:6px 9px;color:var(--text-muted);border-bottom:1px solid var(--border);">Restante período</td>
+            <td style="padding:6px 9px;text-align:center;font-weight:700;color:var(--navy);border-bottom:1px solid var(--border);">8</td>
+            <td style="padding:6px 9px;text-align:center;color:var(--text-muted);border-bottom:1px solid var(--border);">8 máx</td>
+            <td style="padding:6px 9px;text-align:center;color:var(--text-muted);border-bottom:1px solid var(--border);">8 máx</td>
+          </tr>
+          <tr style="background:var(--red-bg);">
+            <td style="padding:6px 9px;color:var(--red);font-size:10.5px;">LVP / falha vigilância</td>
+            <td style="padding:6px 9px;text-align:center;font-weight:700;color:var(--red);">6</td>
+            <td style="padding:6px 9px;text-align:center;color:var(--red);">6 cheg</td>
+            <td style="padding:6px 9px;text-align:center;color:var(--red);">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- FREQUÊNCIAS -->
+    <div class="info-card">
+      <h3>📡 Frequências e Comunicações</h3>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <div style="padding:8px 11px;background:var(--bg);border:1px solid var(--border);border-radius:6px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;font-size:10.5px;">
+          <div style="font-family:var(--fm);font-size:8.5px;color:var(--text-dim);grid-column:1/-1;margin-bottom:2px;text-transform:uppercase;letter-spacing:.06em;">TWR Madeira</div>
+          <div><span style="color:var(--navy);font-weight:700;">118.100</span><br><span style="color:var(--text-dim);font-size:9.5px;">VHF Primária</span></div>
+          <div><span style="color:var(--text-muted);font-weight:700;">120.455</span><br><span style="color:var(--text-dim);font-size:9.5px;">VHF Secundária</span></div>
+        </div>
+        <div style="padding:8px 11px;background:var(--bg);border:1px solid var(--border);border-radius:6px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;font-size:10.5px;">
+          <div style="font-family:var(--fm);font-size:8.5px;color:var(--text-dim);grid-column:1/-1;margin-bottom:2px;text-transform:uppercase;letter-spacing:.06em;">APP Madeira</div>
+          <div><span style="color:var(--navy);font-weight:700;">119.200</span><br><span style="color:var(--text-dim);font-size:9.5px;">VHF Primária</span></div>
+          <div><span style="color:var(--text-muted);font-weight:700;">133.800</span><br><span style="color:var(--text-dim);font-size:9.5px;">VHF Secundária</span></div>
+          <div><span style="color:var(--text-muted);font-weight:700;">279.050</span><br><span style="color:var(--text-dim);font-size:9.5px;">UHF Estado</span></div>
+        </div>
+        <div style="padding:8px 11px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:10.5px;">
+          <div style="font-family:var(--fm);font-size:8.5px;color:var(--text-dim);margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em;">Coordenação</div>
+          <div style="display:flex;flex-direction:column;gap:3px;">
+            <div style="color:var(--text);">↔ <b>TWRSAN:</b> VCS → hotline → tel. público → auto-transf. → AFTN <span style="color:var(--text-dim);font-size:9.5px;">(estima 15 min antes COP)</span></div>
+            <div style="color:var(--text);">↔ <b>ACC Lisboa:</b> VCS → Ericsson → outros tel. → AFTN <span style="color:var(--text-dim);font-size:9.5px;">(estima 10 min antes COP)</span></div>
+            <div style="color:var(--text);">📻 <b>ATIS Madeira:</b> 127.500 MHz</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /nav-grid -->
+
+  <!-- CONTEXT EUROPEU + STAKEHOLDERS -->
+  <div class="nav-grid" style="margin-bottom:16px;">
+
+    <div class="context-box">
+      <h3>🌍 Contexto Europeu — O que torna este caso único</h3>
+      <div class="context-row">
+        <div class="context-flag">🇵🇹</div>
+        <div class="context-text"><b>Multi-aeroporto ilha-a-ilha:</b> controlador no Funchal gere remotamente LPMA e LPPS em simultâneo. Semelhante ao modelo Avinor mas em contexto insular atlântico.</div>
+      </div>
+      <div class="context-row">
+        <div class="context-flag">🔵</div>
+        <div class="context-text"><b>Co-localização virtual + convencional:</b> 2 CWPs virtuais (TWR) + 1 CWP física (APP) no mesmo centro de controlo. Modelo híbrido pouco comum na Europa.</div>
+      </div>
+      <div class="context-row">
+        <div class="context-flag">🇸🇪</div>
+        <div class="context-text"><b>Comparação com Suécia (LFV):</b> LFV controla múltiplos aeroportos a partir de Estocolmo. NAV Portugal segue modelo similar mas geograficamente mais exigente (oceano, orografia).</div>
+      </div>
+      <div class="context-row">
+        <div class="context-flag">🇳🇴</div>
+        <div class="context-text"><b>Comparação com Noruega (Avinor):</b> Avinor opera 15+ aeroportos remotamente. O caso NAV é mais pequeno mas tecnicamente equivalente.</div>
+      </div>
+      <div class="context-row">
+        <div class="context-flag">⚡</div>
+        <div class="context-text"><b>Desafio específico:</b> condições orográficas e meteorológicas da Madeira (vento, baixa visibilidade, pista única 05/23) exigem câmaras e sensores de alta disponibilidade.</div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>👥 Stakeholders do Projecto</h3>
+      <div class="stakeholder-grid">
+        <div class="sh-card">
+          <h4>Internos NAV</h4>
+          <div class="sh-item">ATCOs TWR e APP</div>
+          <div class="sh-item">Supervisores operacionais</div>
+          <div class="sh-item">Manutenção técnica</div>
+          <div class="sh-item">Gestão NAV Portugal</div>
+          <div class="sh-item">Cibersegurança</div>
+        </div>
+        <div class="sh-card">
+          <h4>Externos</h4>
+          <div class="sh-item">ANAC (certificação)</div>
+          <div class="sh-item">ACC Lisboa / CONLIS</div>
+          <div class="sh-item">TWRSAN Porto Santo</div>
+          <div class="sh-item">ANA / VINCI</div>
+          <div class="sh-item">Companhias aéreas</div>
+        </div>
+      </div>
+      <div style="margin-top:10px;">
+        <div style="font-family:var(--fm);font-size:9px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;">Documentos internos</div>
+        <div style="display:flex;flex-direction:column;gap:5px;">
+          <a class="bl bl-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/Conops%20TWRFUN%20com%20plano%20de%20implementa%C3%A7%C3%A3o_v1.1..docx" target="_blank" style="width:fit-content;">📂 CONOPS TWRFUN v1.1</a>
+          <a class="bl bl-loc" href="https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/CONOPS%20PST%20remote%20TWR.docx" target="_blank" style="width:fit-content;">📂 CONOPS PST Remote TWR</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /nav-grid -->
+
+  <!-- NOTA VERSÃO -->
+  <div class="highlight-box">
+    <div class="hi-icon">⚠️</div>
+    <p><b>Nota de versão:</b> O CONOPS TWRFUN v1.1 descreve o modelo com torre física modernizada + torre remota como redundância. O âmbito actual do projecto foi actualizado para <b>virtualização integral das duas torres (LPMA + LPPS)</b> com APP convencional co-localizado, a partir de um único centro no Funchal. O CONOPS será revisto em conformidade.</p>
+  </div>
+
+</section><!-- /nav -->
+
+</main>
+
+<footer>
+  <div class="ft"><span class="dot"></span>NAV Portugal · GOPLIS · CONOPS Remote TWR · Knowledge Hub 2025</div>
+  <div class="ft">Place this file alongside local document files · All docs for internal reference</div>
+</footer>
+
+<script>
+function show(id) {
+  document.querySelectorAll('.sec').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tb').forEach(b => b.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
+  document.getElementById('tab-' + id).classList.add('active');
+}
+
+function doSearch(query) {
+  const q = query.trim().toLowerCase();
+  const info = document.getElementById('sri');
+  const grid = document.getElementById('search-results-grid');
+  const sub  = document.getElementById('sss');
+
+  if (q.length > 0) {
+    show('search');
+    document.getElementById('tab-search').classList.add('active');
+  }
+
+  if (q.length < 2) {
+    grid.innerHTML = '<div class="nr">[ Type at least 2 characters to search ]</div>';
+    info.textContent = '';
+    sub.textContent = 'Type in the search bar above';
+    return;
+  }
+
+  const allCards = [
+    ...document.querySelectorAll('#docs-grid .card'),
+    ...document.querySelectorAll('#links-grid .card'),
+    ...document.querySelectorAll('#cases-grid .cc'),
+    ...document.querySelectorAll('#videos-grid .card')
+  ];
+
+  const matches = [];
+  allCards.forEach(card => {
+    const text = (card.textContent + ' ' + (card.dataset.s || '')).toLowerCase();
+    if (text.includes(q)) matches.push(card.cloneNode(true));
+  });
+
+  grid.innerHTML = '';
+  if (matches.length === 0) {
+    grid.innerHTML = `<div class="nr">[ No results for "${query}" ]</div>`;
+    info.textContent = '0 results';
+    sub.textContent = `No results for "${query}"`;
+  } else {
+    matches.forEach(m => grid.appendChild(m));
+    info.textContent = matches.length + ' result' + (matches.length !== 1 ? 's' : '');
+    sub.textContent = matches.length + ' results for "' + query + '"';
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+    e.preventDefault();
+    document.getElementById('gs').focus();
+    show('search');
+    document.getElementById('tab-search').classList.add('active');
+  }
+});
+</script>
+
+<!-- ══════ MODAL OVERLAY ══════ -->
+<div id="modal-overlay" class="modal-overlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box" id="modal-box">
+    <div class="modal-head" id="modal-head">
+      <div class="modal-head-icon" id="modal-icon">🗼</div>
+      <div class="modal-head-text">
+        <div class="modal-head-title" id="modal-title">Título</div>
+        <div class="modal-head-sub" id="modal-sub">Subtítulo</div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+// ── MODAL CORE ──
+function openModal(icon,title,sub,bodyHtml){
+  document.getElementById('modal-icon').textContent=icon;
+  document.getElementById('modal-title').innerHTML=title;
+  document.getElementById('modal-sub').textContent=sub;
+  document.getElementById('modal-body').innerHTML=bodyHtml;
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+
+// ── DOC SUB-TABS ──
+function showSubTab(section, cat) {
+  document.querySelectorAll('.sub-tab').forEach(t=>t.classList.remove('active'));
+  event.target.classList.add('active');
+  var grid = document.getElementById('docs-grid');
+  if (!grid) return;
+  grid.querySelectorAll('.card').forEach(function(c){
+    if (cat === 'all') { c.style.display=''; }
+    else { c.style.display = (c.dataset.cat === cat) ? '' : 'none'; }
+  });
+}
+
+// ── PHASE MODALS ──
+var phaseData = {
+  'plan': {
+    icon:'📋', title:'Fase 1 — Planeamento Detalhado', sub:'M 0–2 · Fase actual',
+    badge:'Fase Actual',
+    subtitle:'Definição e arranque do projecto',
+    bullets:['Definição detalhada dos requisitos técnicos e operacionais do sistema','Preparação e lançamento do processo de concurso para selecção do fornecedor','Análise de impacto operacional e plano de gestão de mudança','Identificação e mobilização de todos os stakeholders internos e externos','Revisão e actualização do CONOPS com novo âmbito (LPMA + LPPS + APP físico)','Coordenação com ANAC sobre processo e requisitos de certificação'],
+    meta:[['Documento','CONOPS TWRFUN v1.1'],['Duração estimada','2 meses'],['Estado','Em curso']],
+    links:[['📂 CONOPS TWRFUN v1.1','https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/Conops%20TWRFUN%20com%20plano%20de%20implementa%C3%A7%C3%A3o_v1.1..docx','loc']]
+  },
+  'build': {
+    icon:'🏗️', title:'Fase 2 — Construção &amp; Instalação', sub:'M 3–12',
+    subtitle:'Obras e instalação de infraestrutura',
+    bullets:['Instalação de câmaras panorâmicas 360° no LPMA (Madeira) e LPPS (Porto Santo)','Instalação de câmaras de visão nocturna, infravermelha e zoom óptico','Construção/adaptação do espaço do RTC no edifício NAV Funchal','Instalação de infraestrutura de comunicações de alta disponibilidade','Ligações de dados redundantes aeroportos ↔ RTC (fibra óptica + microondas)','Instalação e configuração dos 3 CWPs (2 virtuais TWR + 1 convencional APP)'],
+    meta:[['Localização RTC','Edifício NAV, Funchal (a confirmar)'],['Duração estimada','10 meses'],['CWPs','3 posições: TWR LPMA, TWR LPPS, APP']],
+    links:[]
+  },
+  'int': {
+    icon:'⚙️', title:'Fase 3 — Integração de Sistemas', sub:'M 10–14',
+    subtitle:'Integração com sistemas ATC existentes',
+    bullets:['Integração com sistema VCS (Voice Communication System) existente','Integração com ATIS Madeira (127.500 MHz) e LPPS','Interfaces com sistemas de vigilância: radar, ADS-B, MLT','Integração com sistemas meteorológicos LPMA e LPPS (AWOS)','Testes de interface com sistemas ACC Lisboa / CONLIS','Integração APP com TOPSKY-ATC do sistema COOPANS (sem virtualização)'],
+    meta:[['Duração estimada','5 meses'],['Sistemas críticos','VCS, ATIS, Radar, TOPSKY-ATC/COOPANS'],['Nota','APP não é virtualizado — dependência TOPSKY-ATC']],
+    links:[]
+  },
+  'test': {
+    icon:'🧪', title:'Fase 4 — Testes Técnicos', sub:'M 13–16',
+    subtitle:'Verificação e validação técnica do sistema',
+    bullets:['Testes de performance das câmaras (resolução, cobertura, latência)','Verificação de qualidade de imagem em LVP, nuvens baixas e vento forte','Testes de redundância e failover — comutação automática em falha','Verificação de latência máxima aceitável (<200ms para operação segura)','Testes de cibersegurança e resiliência das comunicações','Verificação de todos os modos degradados e procedimentos de contingência'],
+    meta:[['Duração estimada','4 meses'],['Critério crítico','Latência <200ms · Disponibilidade >99.9%'],['Contexto','Orografia Madeira exige câmaras de alta fiabilidade']],
+    links:[['📄 EASA GM Issue 3','https://www.easa.europa.eu/en/downloads/137788/en','pdf']]
+  },
+  'sim': {
+    icon:'🎮', title:'Fase 5 — Simulações Operacionais', sub:'M 15–17',
+    subtitle:'Treino e avaliação em ambiente simulado',
+    bullets:['Simulações com ATCOs TWR em ambiente de simulador com o sistema real','Avaliação de factores humanos: carga de trabalho e percepção situacional','Identificação e correcção de problemas ergonómicos e de interface','Simulação de cenários de emergência e procedimentos de contingência','Avaliação psicológica da transição de torre física para torre virtual','Ajuste final de procedimentos operacionais e cartas (LOA, OP)'],
+    meta:[['Duração estimada','3 meses'],['Referência','IAA MRTO Manuscript 2019'],['Parceiro referência','IAA Irlanda — experiência em MRTO']],
+    links:[['📂 IAA MRTO Manuscript','https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/IAA%202019MRTOFinalManuscript.docx','loc']]
+  },
+  'train': {
+    icon:'🎓', title:'Fase 6 — Formação de Pessoal', sub:'M 15–18',
+    subtitle:'Qualificação e certificação de pessoal',
+    bullets:['Formação inicial de ATCOs TWR Funchal (LPMA) em sistema de torre virtual','Formação de ATCOs Porto Santo (LPPS) em sistema de torre virtual','Qualificação em câmaras, ferramentas de visualização e CWP','Formação de supervisores operacionais e chefias','Formação de pessoal de manutenção técnica do sistema remoto','Actualização de documentação operacional: cartas, LOA, OP, ERP'],
+    meta:[['Duração estimada','4 meses'],['Nota','Pode decorrer em paralelo com Fase 5'],['Aprovação','Qualificações sujeitas a aceitação pela ANAC']],
+    links:[]
+  },
+  'pilot': {
+    icon:'✈️', title:'Fase 7 — Operação Piloto', sub:'M 18–20',
+    subtitle:'Período de operação experimental supervisionada',
+    bullets:['Operação em paralelo com procedimentos convencionais de backup activos','Supervisão reforçada por inspectores ANAC durante todo o período','Recolha sistemática de dados operacionais e métricas de segurança','Monitorização contínua de latência, qualidade de imagem e eventos técnicos','Reuniões de revisão semanais com ATCOs, supervisores e ANAC','Actualização do CONOPS com base na experiência operacional adquirida'],
+    meta:[['Duração estimada','3 meses'],['Critério de sucesso','0 incidentes relacionados com o sistema'],['Nota','Backup convencional mantido durante todo o período']],
+    links:[['📂 CONOPS TWRFUN v1.1','https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/Conops%20TWRFUN%20com%20plano%20de%20implementa%C3%A7%C3%A3o_v1.1..docx','loc']]
+  },
+  'cert': {
+    icon:'📜', title:'Fase 8 — Certificação ANAC', sub:'M 20–22',
+    subtitle:'Processo de aprovação regulatória',
+    bullets:['Submissão de dossiê de certificação completo à ANAC','Auditorias operacionais e técnicas pela equipa de inspecção ANAC','Inspecção formal das instalações RTC no Funchal','Aprovação de todos os procedimentos operacionais e cartas actualizadas','Emissão de autorização formal de operação por parte da ANAC','Notificação EUROCONTROL e actualização AIP Portugal (LPMA/LPPS)'],
+    meta:[['Duração estimada','3 meses'],['Entidade','ANAC — Autoridade Nacional de Aviação Civil'],['Referência regulatória','EASA GM Issue 3 (2023) · ED Decision 2023-005-R']],
+    links:[['🔗 EASA GM Issue 3','https://www.easa.europa.eu/en/document-library/acceptable-means-of-compliance-and-guidance-material/gm-remote-tower-operations-1','page'],['📥 GM Issue 3 PDF','https://www.easa.europa.eu/en/downloads/137788/en','pdf']]
+  },
+  'ops': {
+    icon:'🟢', title:'Fase 9 — Entrada em Serviço Plena', sub:'M 23+ · Target ≤ 2030',
+    subtitle:'Operação plena do RTC Funchal',
+    bullets:['Cessação de operações da torre física (se mantida como backup ou desactivada)','TWR Funchal (LPMA) operacional em modo virtual a partir do RTC Funchal','TWR Porto Santo (LPPS) operacional em modo virtual a partir do RTC Funchal','Posição APP Madeira em operação convencional co-localizada no RTC','Monitorização contínua de KPIs operacionais e de segurança','Potencial expansão futura a outros aeródromes da NAV Portugal'],
+    meta:[['Target','Até 2030'],['Modelo operacional','2 TWR virtuais + APP físico co-localizado'],['Localização','RTC Funchal — edifício NAV Portugal'],['Nota','1.º RTC insular multi-aeroporto em Portugal']],
+    links:[['↗ NAV Portugal','https://www.nav.pt','web']]
+  }
+};
+
+function openPhaseModal(key) {
+  var d = phaseData[key]; if(!d) return;
+  var badge = d.badge ? '<div class="modal-phase-badge">⚡ '+d.badge+'</div>' : '';
+  var bullets = d.bullets.map(b=>'<li>'+b+'</li>').join('');
+  var meta = '<dl class="modal-kv">'+d.meta.map(m=>'<dt>'+m[0]+'</dt><dd>'+m[1]+'</dd>').join('')+'</dl>';
+  var links = d.links.length ? '<div class="modal-links">'+d.links.map(function(l){
+    var cls = l[2]==='pdf'?'modal-ext-pdf':l[2]==='page'?'modal-ext-page':l[2]==='loc'?'modal-ext-pdf':'modal-ext-web';
+    return '<a class="modal-ext-link '+cls+'" href="'+l[1]+'" target="_blank">'+l[0]+'</a>';
+  }).join('')+'</div>' : '';
+  var body = badge +
+    '<div class="modal-section"><p style="font-family:var(--fh);font-size:13px;font-weight:700;color:var(--navy);margin-bottom:8px;">'+d.subtitle+'</p></div>' +
+    '<div class="modal-section"><h4>O que acontece nesta fase:</h4><ul>'+bullets+'</ul></div>' +
+    '<div class="modal-divider"></div>' +
+    '<div class="modal-section"><h4>Informações-chave</h4>'+meta+'</div>' +
+    links;
+  openModal(d.icon, d.title, d.sub, body);
+}
+
+// ── STATUS MODALS ──
+var statusData = {
+  'lfv':       { icon:'🇸🇪', title:'LFV — Suécia', sub:'Live desde 2015 · 1.º do mundo', color:'#0a7a56',
+    desc:'O LFV (Luftfartsverket) é o ANSP sueco e pioneiro mundial em torres remotas certificadas pelo ICAO. Desde Abril de 2015 controla o aeroporto de Örnsköldsvik remotamente a partir de Sundsvall. O modelo foi expandido para um RTC em Stockholm Arlanda controlando múltiplos aeroportos.',
+    meta:[['Sistema','Saab r-TWR'],['Aeroportos','5+ (Örnsköldsvik, Sundsvall e outros)'],['RTC','Stockholm Arlanda'],['Certificação','ICAO — 1.º do mundo (2015)']],
+    links:[['↗ LFV Remote Towers','https://lfv.se/en/about-us/this-is-lfv/lfv-holding-and-subsidiaries/lfv-aviation-consulting/portfolio/remote-tower','web'],['↗ Serviços Remote Tower','https://www.lfv.se/en/services/airport-services/remote-tower-services','web']]},
+  'avinor':    { icon:'🇳🇴', title:'Avinor — Noruega', sub:'Live — 15+ aeroportos', color:'#0a7a56',
+    desc:'Avinor opera o maior conjunto de torres remotas do mundo. Aeroportos regionais noruegueses são geridos de RTCs em Bodø e Røros usando sistemas Saab r-TWR, Frequentis e Indra. Referência mundial para implementações em larga escala.',
+    meta:[['Sistemas','Saab r-TWR + Frequentis + Indra'],['Aeroportos','15+ aeroportos regionais'],['RTCs','Bodø, Røros'],['Destaque','Maior RTC do mundo']],
+    links:[['↗ Avinor Digital Towers','https://om.avinor.no/en/aviation-safety/digital-towers/','web'],['↗ RTC Bodø — Kongsberg','https://www.kongsberg.com/news/stories/2025/5/remote-towers-a-new-standard-for-air-traffic-management/','web']]},
+  'nats':      { icon:'🇬🇧', title:'NATS — Reino Unido', sub:'Live — London City 2022', color:'#0a7a56',
+    desc:'NATS operou a primeira torre digital num hub internacional de grande dimensão. London City Airport é controlado remotamente com câmaras 4K panorâmicas e IA (Frequentis + Searidge). Southampton também operacional. East Midlands em desenvolvimento.',
+    meta:[['Sistema','Frequentis + Searidge'],['Tecnologia','4K panorâmico + IA (detecção automática)'],['Aeroportos','London City (EGLC), Southampton (EGHI)'],['Destaque','1.º hub internacional com torre digital']],
+    links:[['↗ NATS Digital Tower','https://www.nats.aero/our-solutions/digital-towers/','web'],['↗ London City — 1 Year On','https://www.londoncityairport.com/media-centre/press-releases/one-year-on-london-citys-digital-air-traffic-control-tower','web'],['▶ Vídeo 4K + AI','https://www.youtube.com/watch?v=MsoxL6tMG_I','web']]},
+  'dfs':       { icon:'🇩🇪', title:'DFS — Alemanha', sub:'Live — Leipzig RTC 2022', color:'#0a7a56',
+    desc:'A DFS Deutsche Flugsicherung opera o Remote Tower Centre (RTC) em Leipzig, controlando o aeroporto de Erfurt-Weimar remotamente desde 2022. Sistema Frequentis com câmaras panorâmicas de alta resolução.',
+    meta:[['Sistema','Frequentis'],['RTC','Leipzig (EDDE adjacente)'],['Aeroporto remoto','Erfurt-Weimar (EDDE)'],['Ano','2022']],
+    links:[['↗ DFS Press Release','https://www.dfs.de/homepage/en/media/press/2022/28-04-2022-expansion-of-the-dfs-remote-tower-control-centre/','web'],['📥 DFS Leipzig PDF','https://eu-lac-app.eu/public/uploads/DFS_Projekt_RTC_20231024_eng.pdf','pdf']]},
+  'iaa':       { icon:'🇮🇪', title:'IAA — Irlanda', sub:'Operacional', color:'#2563eb',
+    desc:'A Irish Aviation Authority é pioneira em MRTO (Multiple Remote Tower Operations). Um único controlador pode gerir vários aeroportos em simultâneo. Desenvolveu pesquisa de referência sobre factores humanos em MRTO.',
+    meta:[['Sistema','Saab r-TWR'],['Conceito','MRTO — múltiplos aeroportos / 1 ATCO'],['Pesquisa','Human Performance Assessment 2019 (manuscrito disponível)'],['Parceiro','SESAR JU']],
+    links:[['↗ IAA','https://www.iaa.ie','web'],['📄 MRTO Research','https://www.sciencedirect.com/science/article/abs/pii/S0965856417303397','page']]},
+  'hc':        { icon:'🇭🇺', title:'HungaroControl — Hungria', sub:'Operacional desde 2022', color:'#2563eb',
+    desc:'HungaroControl foi o primeiro RTC operacional na Europa Central e de Leste. Controla Győr-Pér a partir de Budapeste com sistema Frequentis/Indra. Considerado um dos mais avançados do mundo segundo a Indra.',
+    meta:[['Sistema','Frequentis + Indra'],['RTC','Budapeste'],['Aeroporto remoto','Győr-Pér (LHPR)'],['Destaque','1.º RTC operacional Europa Central-Este']],
+    links:[['↗ HungaroControl','https://en.hungarocontrol.hu/','web'],['↗ Indra — Budapest RTC','https://airtraffic.indragroup.com/en/blog/the-worlds-most-advanced-remote-digital-tower-is-in','web']]},
+  'romatsa':   { icon:'🇷🇴', title:'ROMATSA — Roménia', sub:'Operacional desde 2024', color:'#2563eb',
+    desc:'A ROMATSA controla o novo aeroporto Brașov-Ghimbav remotamente a partir de Arad. Foi o primeiro aeroporto na Europa Central-Este construído de raiz com tecnologia de torre remota integrada desde o início.',
+    meta:[['Sistema','Saab r-TWR'],['RTC','Arad'],['Aeroporto','Brașov-Ghimbav (LRBV)'],['Destaque','1.º aeroporto construído de raiz com torre remota na Europa C-E']],
+    links:[['↗ ROMATSA','https://www.romatsa.ro/','web']]},
+  'skeyes':    { icon:'🇧🇪', title:'skeyes — Bélgica', sub:'Em desenvolvimento · Target 2026', color:'#b45309',
+    desc:'A skeyes está a construir o RTC DiTo (Digital Tower) em Namur para controlar os aeroportos de Charleroi e Liège remotamente. O test centre em Steenokkerzeel está operacional desde Março de 2024.',
+    meta:[['Sistema','Saab r-TWR'],['RTC','Namur (em construção)'],['Test centre','Steenokkerzeel — operacional Mar 2024'],['Aeroportos','Charleroi (EBCI) + Liège (EBLG)']],
+    links:[['↗ skeyes / EUROCONTROL','https://www.eurocontrol.int/article/remote-towers-skeyes-dito-project','web']]},
+  'fintraffic': { icon:'🇫🇮', title:'Fintraffic — Finlândia', sub:'Em desenvolvimento · MROT', color:'#b45309',
+    desc:'Fintraffic ANS está a desenvolver o projecto MROT (Multi Remote Operating Tower) para controlar remotamente até 7 aeroportos regionais finlandeses, incluindo Ivalo, Kittilä, Turku e Oulu. Em fase de concurso em 2024.',
+    meta:[['Sistema','TBD — em concurso/adjudicação'],['Aeroportos','Até 7: Ivalo, Kittilä, Turku, Oulu...'],['RTC','Helsinki (previsto)'],['Estado','Em fase de concurso']],
+    links:[['↗ Fintraffic','https://www.fintraffic.fi/','web']]},
+  'austro':    { icon:'🇦🇹', title:'Austro Control — Áustria', sub:'Trial / Desenvolvimento', color:'#b45309',
+    desc:'Austro Control está a desenvolver torres remotas para aerodromes regionais austríacos em colaboração com a Frequentis (com sede em Viena) e outros fornecedores como TRIAC e ADB SAFEGATE.',
+    meta:[['Sistema','Frequentis (+ TRIAC, ADB SAFEGATE)'],['Estado','Desenvolvimento / testes'],['Nota','Frequentis sediada em Viena — proximidade ao projecto']],
+    links:[['↗ Austro Control','https://www.austrocontrol.at','web'],['↗ Frequentis Digital Tower','https://www.frequentis.com/en/air-traffic-management/focus-areas/remote-digital-tower','web']]},
+  'nav':       { icon:'🇵🇹', title:'NAV Portugal', sub:'CONOPS em desenvolvimento · Target ≤ 2030', color:'#b45309',
+    desc:'NAV Portugal está a desenvolver o RTC Funchal no âmbito do projecto GOPLIS. Duas torres virtuais (LPMA + LPPS) geridas remotamente e APP Madeira em posição convencional co-localizada. Primeiro RTC insular multi-aeroporto em Portugal.',
+    meta:[['Sistema','TBD — a adjudicar'],['RTC','Funchal — edifício NAV (a confirmar)'],['Torres virtuais','TWR Funchal (LPMA) + TWR Porto Santo (LPPS)'],['APP','Físico co-localizado — TOPSKY-ATC (COOPANS)'],['Target','Até 2030']],
+    links:[['↗ NAV Portugal','https://www.nav.pt','web'],['📂 CONOPS TWRFUN v1.1','https://navpt.sharepoint.com/sites/DOPLIS-TRALIS-All/01%20%20TRALIS%20%20Pblico/Utilidades/Remote%20%26%20Digital%20Towers%20Knowledge%20base/Conops%20TWRFUN%20com%20plano%20de%20implementa%C3%A7%C3%A3o_v1.1..docx','loc']]}
+};
+
+function openStatusModal(key) {
+  var d = statusData[key]; if(!d) return;
+  var meta = '<dl class="modal-kv">'+d.meta.map(m=>'<dt>'+m[0]+'</dt><dd>'+m[1]+'</dd>').join('')+'</dl>';
+  var links = d.links.length ? '<div class="modal-links">'+d.links.map(function(l){
+    var cls = l[2]==='pdf'?'modal-ext-pdf':l[2]==='page'?'modal-ext-page':l[2]==='loc'?'modal-ext-pdf':'modal-ext-web';
+    return '<a class="modal-ext-link '+cls+'" href="'+l[1]+'" target="_blank">'+l[0]+'</a>';
+  }).join('')+'</div>' : '';
+  var bar = '<div style="height:4px;background:'+d.color+';border-radius:3px;margin-bottom:14px;"></div>';
+  var body = bar +
+    '<div class="modal-section"><p>'+d.desc+'</p></div>' +
+    '<div class="modal-divider"></div>' +
+    '<div class="modal-section"><h4>Ficha técnica</h4>'+meta+'</div>' +
+    links;
+  openModal(d.icon, d.title, d.sub, body);
+}
+</script>
+
+</body>
+</html>
